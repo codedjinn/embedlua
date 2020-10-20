@@ -1,0 +1,1 @@
+gcc -o ./debug/main main.c -Llib/lua -llua54 -Ilib/lua/include 
