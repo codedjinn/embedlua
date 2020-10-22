@@ -1,0 +1,11 @@
+{
+    "name": "map1",
+    "object_files": [
+        "entity1.json"
+    ],
+    "objects": [
+        {
+            "name": "ent1"
+        }
+    ]
+}

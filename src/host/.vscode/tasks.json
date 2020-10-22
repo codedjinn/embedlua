@@ -1,6 +1,4 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
@@ -11,10 +9,18 @@
                 "cwd": "./build"
             },
             "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "group": "build"
+        },
+        {
+            "label": "Copy Scripts",
+            "type": "shell",
+            "command": "xcopy",
+            "args": [
+                "scripts\\*.lua",
+                "bin",
+                "/r/y"
+            ],
+            "group": "build"
         }
     ]
 }
