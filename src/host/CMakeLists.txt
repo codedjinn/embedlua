@@ -14,10 +14,12 @@ enable_testing()
 set(
     SOURCE_FILES
     main.cpp
-    framework/Logger.h
     framework/Utils.h
-    framework/Game.h
-    framework/GameObject.h
+    framework/Utils.cpp
+    framework/Logger.h
+    framework/Logger.cpp
+    framework/GameObjectFactory.h
+    framework/GameObjectFactory.cpp
 )
 
 add_executable(host ${SOURCE_FILES})

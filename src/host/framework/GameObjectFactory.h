@@ -1,6 +1,5 @@
-#pragma once
-
-#include "GameObject.h"
+#ifndef __GAME_OBJECT_FACTORY__
+#define __GAME_OBJECT_FACTORY__
 
 #include <string>
 #include <map>
@@ -12,13 +11,15 @@ class GameObjectFactory
 {
     private:
 
-        std::map<std::string, std::string> _scripts;
+        //std::map<std::string, std::string> _scripts;
 
     public:
 
         void Initialize();
 
-        const GameObject& Create(std::string name);
+        //const GameObject& Create(std::string name);
 };
 
 }
+
+#endif
