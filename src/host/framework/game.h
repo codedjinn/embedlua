@@ -1,15 +1,12 @@
 #pragma once
 
-namespace engine
+namespace Engine
 {
 
-struct Game
+class Game
 {
-    int id;
-    bool isRunning;
+    public:
+        Game();
 };
-
-Game* create_game();
-void run_game(Game* game);
 
 }

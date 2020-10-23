@@ -14,11 +14,10 @@ enable_testing()
 set(
     SOURCE_FILES
     main.cpp
-    framework/vector3.h
-    framework/entity.h
-    framework/game.h
-    framework/game.cpp
-    lib/json/jsoncpp.cpp
+    framework/Logger.h
+    framework/Utils.h
+    framework/Game.h
+    framework/GameObject.h
 )
 
 add_executable(host ${SOURCE_FILES})

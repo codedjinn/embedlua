@@ -2,21 +2,22 @@
 #include <stdio.h>
 #include <iostream>
 
-#include "framework/game.h"
+#include "framework/Utils.h"
+#include "framework/Logger.h"
 
 int main()
 {
+    Engine::LogInfo("Starting Engine...");
+
     // limit try/catch usage
     try
     {
-        engine::Game* game = engine::create_game();
-        engine::run_game(game);
     }
     catch(const std::exception& e)
     {
-
+        // C/C++ people have funny method names...
+        printf("Exception: %d\n", e.what());
     }
-
     
     return 0;
 }
