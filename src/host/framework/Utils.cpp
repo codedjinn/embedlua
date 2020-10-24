@@ -1,6 +1,5 @@
 #include "Utils.h"
 
-#include <tuple>
 #include <iostream>
 #include <fstream>
 
@@ -24,13 +23,13 @@ std::vector<std::string> GetFiles(std::string path)
         {
             std::string filename(ent->d_name);
 
-            // ignore pir pointers
-            if (filename.compare(".") || file.compare(".."))
+            if ((filename.length() == 1 && filename.compare(".") > -1)
+                || (filename.length() == 2 && filename.compare("..") > -1))
             {
-               continue;
+                continue;
             }
 
-            result.push_back(std::string(ent->d_name));
+            result.push_back(path + "\\" + filename);
         }
     }
 

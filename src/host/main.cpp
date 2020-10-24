@@ -14,7 +14,9 @@ int main()
     // limit try/catch usage
     try
     { 
-        Engine::LogInfo("Create GameObjectFactory");
+        // usefull if class fails to create new instance then we know where execution stopped
+        Engine::LogInfo("Creating GameObjectFactory...");
+
         auto* factory = new Engine::GameObjectFactory();
         factory->Initialize();
     }

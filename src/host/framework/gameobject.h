@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "Vector2.h"
+
 namespace Engine
 {
 
@@ -15,6 +17,8 @@ class GameObject
         // will be set by the engine
         int _id;
         std::string _script;
+
+        Vector2 _pos;
 
     public:
 

@@ -14,10 +14,14 @@ enable_testing()
 set(
     SOURCE_FILES
     main.cpp
+    lib/json/jsoncpp.cpp
     framework/Utils.h
     framework/Utils.cpp
+    framework/JsonUtils.h
+    framework/JsonUtils.cpp
     framework/Logger.h
     framework/Logger.cpp
+    framework/Vector2.h
     framework/GameObjectFactory.h
     framework/GameObjectFactory.cpp
 )

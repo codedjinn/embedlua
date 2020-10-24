@@ -12,6 +12,7 @@ class GameObjectFactory
     private:
 
         //std::map<std::string, std::string> _scripts;
+        bool _isInitialized;
 
     public:
 
