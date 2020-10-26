@@ -1,6 +1,4 @@
 {
     "name": "ent1",
-    "script": "entity1.lua",
-    "position": [ 10.0, 12.0 ],
-    "rotation": 35.3
+    "script": "entity1.lua" 
 }

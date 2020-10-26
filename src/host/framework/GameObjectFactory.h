@@ -1,8 +1,9 @@
-#ifndef __GAME_OBJECT_FACTORY__
-#define __GAME_OBJECT_FACTORY__
+#pragma once
 
 #include <string>
-#include <map>
+#include <vector>
+
+//#include "GameObjectDef.h"
 
 namespace Engine
 {
@@ -10,6 +11,8 @@ namespace Engine
 class GameObjectFactory
 {
     private:
+
+       // std::vector<GameObjectDef> _definitions;
 
         //std::map<std::string, std::string> _scripts;
         bool _isInitialized;
@@ -19,8 +22,11 @@ class GameObjectFactory
         void Initialize();
 
         //const GameObject& Create(std::string name);
+
+        // const std::vector<GameObjectDef> getDefinitions()
+        // {
+        //     return _definitions;
+        // }
 };
 
 }
-
-#endif

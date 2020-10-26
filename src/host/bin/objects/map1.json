@@ -1,11 +1,4 @@
 {
     "name": "map1",
-    "object_files": [
-        "entity1.json"
-    ],
-    "objects": [
-        {
-            "name": "ent1"
-        }
-    ]
+    "player_start": [ 10, 2 ]
 }

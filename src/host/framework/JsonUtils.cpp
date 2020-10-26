@@ -10,13 +10,11 @@ namespace Engine
 
 bool ParseJsonFile(std::string filename, Json::Value& root)
 {
-    Json::CharReaderBuilder builder;
-
-    JSONCPP_STRING err;
-
     std::ifstream file (filename, std::ifstream::in);
     if (file.good())
     {
+        JSONCPP_STRING err;
+        Json::CharReaderBuilder builder;
         if (Json::parseFromStream(builder, file, &root, &err))
         {
             return true;
@@ -26,8 +24,7 @@ bool ParseJsonFile(std::string filename, Json::Value& root)
             std::string errMsg("Error parsing ");
             errMsg.append(filename);
             errMsg.append(". Reason: ");
-            errMsg.append(err);
-            
+            errMsg.append(err);            
             LogError(errMsg);
         }        
     }
@@ -36,7 +33,6 @@ bool ParseJsonFile(std::string filename, Json::Value& root)
         std::string errMsg("File not found: ");
         LogDebug(errMsg + filename);
     }
-        
     return false;
 }
 

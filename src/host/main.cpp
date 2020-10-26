@@ -5,7 +5,7 @@
 #include "framework/Utils.h"
 #include "framework/Logger.h"
 
-#include "framework/GameObjectFactory.h"
+#include "framework/GameInstance.h"
 
 int main()
 {
@@ -13,12 +13,19 @@ int main()
 
     // limit try/catch usage
     try
-    { 
+    {
+        Engine::GameInstance game;
+        game.Run();
         // usefull if class fails to create new instance then we know where execution stopped
-        Engine::LogInfo("Creating GameObjectFactory...");
+        // Engine::LogInfo("Creating GameObjectFactory...");
 
-        auto* factory = new Engine::GameObjectFactory();
-        factory->Initialize();
+        // // auto* factory = new Engine::GameObjectFactory();
+        // // factory->Initialize();
+
+        // for (auto def : factory->getDefinitions())
+        // {
+        //     LogInfo("Name " + def.getName());
+        // }
     }
     catch(const std::exception& e)
     {

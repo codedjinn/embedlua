@@ -22,8 +22,16 @@ set(
     framework/Logger.h
     framework/Logger.cpp
     framework/Vector2.h
+    framework/GameObjectDef.h
+    framework/GameObjectDef.cpp
     framework/GameObjectFactory.h
     framework/GameObjectFactory.cpp
+    framework/GameInstance.h
+    framework/GameInstance.cpp
+    framework/Map.h
+    framework/Map.cpp
+    framework/Player.h
+    framework/Player.cpp
 )
 
 add_executable(host ${SOURCE_FILES})
