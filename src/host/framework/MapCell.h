@@ -6,8 +6,8 @@ namespace Engine
 // basic for now
 enum class MapCellType
 {
-    Open,
-    Closed
+    Floor = 0,
+    Wall = 1
 };
 
 // helps describes details about the map

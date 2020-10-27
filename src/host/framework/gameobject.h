@@ -19,6 +19,10 @@ class GameObject
         std::string _script;
 
         Vector2 _pos;
+        // needed for collisions
+        float _size;
+
+        
 
     public:
 

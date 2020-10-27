@@ -4,6 +4,7 @@
 
 #include "Map.h"
 #include "Player.h"
+#include "GameObject.h"
 
 namespace Engine
 {
@@ -14,8 +15,10 @@ class GameInstance
     private:
 
         bool _isRunning;
+        
+        Map* _map;
         Player* _player;
-        Map _map;
+        std::vector<GameObject*> _objects;        
 
     public:
 
@@ -28,6 +31,8 @@ class GameInstance
         void Demo();
 
         void Run();
+
+        void Shutdown();
 
 };
 

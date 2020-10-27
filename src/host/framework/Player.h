@@ -2,20 +2,15 @@
 
 #include "Vector2.h"
 
-#include <windows.h>
-
 namespace Engine
 {
 
 class Player
 {
     private:
-        float _faceDir;
-        Vector2 _startPos;
 
-        HANDLE _handle;
-        HANDLE _console;
-        DWORD _oldMode;
+        float _faceDir;
+        Vector2 _pos;
 
         void HandleKeys();
 
@@ -25,7 +20,7 @@ class Player
 
         void Update(float time);
 
-        const Vector2 getStartPos() { return _startPos; }
+        const Vector2 getPos() { return _pos; }
         const float getFaceDir() { return _faceDir; }
 };
 

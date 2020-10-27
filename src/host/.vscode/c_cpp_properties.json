@@ -3,7 +3,8 @@
         {
             "name": "GCC",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../SFML2/include"
             ],
             "defines": [
                 "_DEBUG",

@@ -3,55 +3,47 @@
 #include <iostream>
 #include <cassert>
 
+#include <conio.h>
+
+#include "Keyboard.h"
 
 namespace Engine
 {
 
 Player::Player()
 {
-    _handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    if (_handle == INVALID_HANDLE_VALUE)
-    {
-        assert("Couldn't handle keyboard input");
-    }
-
-    if (!GetConsoleMode(_handle, &_oldMode))
-    {
-        assert("No old mode!?");
-    }
+    _pos.x = 0.0f;
+    _pos.y = 0.0f;
 }
+
+const int KEY_W = 119;
+const int KEY_S = 115;
+const int KEY_A = 97;
+const int KEY_D = 77;
 
 void Player::HandleKeys()
 {
-    DWORD numRead, i;
-    INPUT_RECORD inBuf[128];
-    int counter = 0;
-
-    while (!counter)
+    if (_kbhit() != 0)
     {
-        if (!ReadConsoleInput(_handle, inBuf, 128, &numRead))
+        int key = _getch();
+        if (key == KEY_W)
         {
-            assert("no read console input");
+            _pos.y += 0.5f;
         }
-
-        for (int i = 0; i < numRead; i++)
+        else if (key == KEY_S)
         {
-            INPUT_RECORD cur = inBuf[i];
-            switch (cur.EventType)
-            {
-                case KEY_EVENT:
-                    KEY_EVENT_RECORD key = cur.Event.KeyEvent;
-                    if (key.wVirtualKeyCode == 57 && key.bKeyDown == true)
-                    {
-                        // move forward!
-                        printf("going forward!");
-                    }
-                    break;
-            }
+            _pos.y -= 0.5f;
         }
-    } 
+        else if (key == KEY_A)
+        {
+            _pos.x -= 0.5f;
+        }
+        else if (key == KEY_D)
+        {
+            _pos.x += 0.5f;
+        }
+    }
 }
-
 
 void Player::Update(float time)
 {
