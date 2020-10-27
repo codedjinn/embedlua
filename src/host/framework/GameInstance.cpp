@@ -18,7 +18,7 @@ void GameInstance::Run()
     float acc = 0.0f;
     while (_isRunning)
     {
-        _player.Update(0.25f);
+        _player->Update(0.25f);
         usleep(250000);
     }
 }

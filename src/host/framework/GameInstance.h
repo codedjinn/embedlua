@@ -14,7 +14,7 @@ class GameInstance
     private:
 
         bool _isRunning;
-        Player _player;
+        Player* _player;
         Map _map;
 
     public:
@@ -22,6 +22,7 @@ class GameInstance
         GameInstance()
         {
             _isRunning = false;
+            _player = new Player();
         }
 
         void Demo();
