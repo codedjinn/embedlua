@@ -9,8 +9,6 @@
 
 #include "framework/GameInstance.h"
 
-
-
 int main()
 {
     Engine::LogInfo("Starting Engine...");
@@ -31,6 +29,10 @@ int main()
 
             window.clear();
             window.display();
+
+            sf::RectangleShape rect(sf::Vector2f(120, 50));
+            rect.setSize(sf::Vector2f(100,100));
+            window.draw(rect);
         }
         // Engine::GameInstance game;
         // game.Demo();

@@ -2,7 +2,6 @@
 
 #include <string>
 
-#include "Vector2.h"
 #include "MapCell.h"
 
 namespace Engine
@@ -17,9 +16,6 @@ class Map
 
         int _length;
         MapCell* _cells;
-
-        Vector2 _playerStart;
-
 
     public:
 

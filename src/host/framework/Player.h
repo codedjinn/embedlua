@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Vector2.h"
+#include <SFML/Graphics.hpp>
 
 namespace Engine
 {
@@ -10,7 +10,7 @@ class Player
     private:
 
         float _faceDir;
-        Vector2 _pos;
+        sf::Vector2f _pos;
 
         void HandleKeys();
 
@@ -20,7 +20,7 @@ class Player
 
         void Update(float time);
 
-        const Vector2 getPos() { return _pos; }
+        const sf::Vector2f getPos() { return _pos; }
         const float getFaceDir() { return _faceDir; }
 };
 

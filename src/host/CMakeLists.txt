@@ -1,10 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(host VERSION 0.1.0)
 
-set(SFML_STATIC_LIBRARIES TRUE)
-
-add_compile_definitions(SFML_STATIC)
-
+add_definitions(-DSFML_STATIC)
 #include(CTest)
 # enable_testing()
 
@@ -25,7 +22,6 @@ set(
     framework/JsonUtils.cpp
     framework/Logger.h
     framework/Logger.cpp
-    framework/Vector2.h
     framework/GameObjectDef.h
     framework/GameObjectDef.cpp
     framework/GameObject.h
@@ -45,13 +41,19 @@ add_executable(host ${SOURCE_FILES})
 
 include_directories(lib/lua/include)
 include_directories(lib/json/includes)
-include_directories(../SFML2/include)
+include_directories(C:/sfml2/include)
 
 find_library(LUA lua54 lib/lua)
 target_link_libraries(host LINK_PUBLIC ${LUA})
 
-find_library(SFML2 sfml-graphics ../SFML2/lib)
+find_library(SFML2 sfml-graphics c:/SFML2/lib)
 target_link_libraries(host LINK_PUBLIC ${SFML2})
+
+find_library(SFML22 sfml-window c:/SFML2/lib)
+target_link_libraries(host LINK_PUBLIC ${SFML22})
+
+find_library(SFML21 sfml-system c:/SFML2/lib)
+target_link_libraries(host LINK_PUBLIC ${SFML21})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

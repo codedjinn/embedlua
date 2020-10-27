@@ -2,8 +2,6 @@
 
 #include <string>
 
-#include "Vector2.h"
-
 namespace Engine
 {
 
@@ -18,7 +16,6 @@ class GameObject
         int _id;
         std::string _script;
 
-        Vector2 _pos;
         // needed for collisions
         float _size;
 
