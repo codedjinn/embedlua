@@ -25,7 +25,7 @@ class GameObject
 
         void Initialize();
         void Update(float time);
-
+        void Draw(float time);
         
 };
 

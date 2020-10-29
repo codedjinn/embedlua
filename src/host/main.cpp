@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 
-#include <SFML/graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 #include "framework/Utils.h"
 #include "framework/Logger.h"
@@ -16,24 +16,34 @@ int main()
     // limit try/catch usage
     try
     {
+        Engine::GameInstance game;
+        
         sf::RenderWindow window(sf::VideoMode(800, 600), "Embed");
 
         while (window.isOpen())
         {
-             sf::Event event;
+            sf::Event event;
             while (window.pollEvent(event))
             {
                 if (event.type == sf::Event::Closed)
                     window.close();
             }
 
-            window.clear();
-            window.display();
+            game.Update(0);
 
-            sf::RectangleShape rect(sf::Vector2f(120, 50));
-            rect.setSize(sf::Vector2f(100,100));
-            window.draw(rect);
+            window.clear();
+
+            game.Draw(0, window);
+
+            // sf::RectangleShape rect(sf::Vector2f(120, 50));
+            // rect.setSize(sf::Vector2f(100,100));
+            // rect.setFillColor(sf::Color::Blue);
+            // rect.setPosition(sf::Vector2f(40,40));
+            // window.draw(rect);
+
+            window.display();
         }
+
         // Engine::GameInstance game;
         // game.Demo();
         // game.Run();

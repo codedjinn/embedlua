@@ -12,4 +12,8 @@ void GameObject::Update(float time)
 {
 }
 
+void GameObject::Draw(float time)
+{
+}
+
 }

@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include <SFML/Graphics.hpp>
+
 #include "MapCell.h"
 
 namespace Engine
@@ -19,6 +21,8 @@ class Map
 
     public:
 
+        const float TileSize = 20.0f;
+
         void Demo();
 
         // will need to implement this for actual game
@@ -29,6 +33,9 @@ class Map
 
         const int getWidth() { return _width; }
         const int getHeight() { return _height; }
+
+
+        void Draw(float time, sf::RenderWindow& renderer);
 };
 
 }

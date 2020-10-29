@@ -2,6 +2,8 @@
 
 #include <vector>
 
+#include <SFML/Graphics.hpp>
+
 #include "Map.h"
 #include "Player.h"
 #include "GameObject.h"
@@ -11,7 +13,6 @@ namespace Engine
 
 class GameInstance
 {
-
     private:
 
         bool _isRunning;
@@ -22,15 +23,14 @@ class GameInstance
 
     public:
 
-        GameInstance()
-        {
-            _isRunning = false;
-            _player = new Player();
-        }
+        GameInstance();
 
         void Demo();
 
-        void Run();
+        //void Run();
+
+        void Update(float time);
+        void Draw(float time, sf::RenderWindow& renderer);
 
         void Shutdown();
 

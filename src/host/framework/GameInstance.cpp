@@ -10,43 +10,73 @@
 namespace Engine
 {
 
+GameInstance::GameInstance()
+{
+    _isRunning = false;
+    _player = new Player();
+
+}
 void GameInstance::Demo()
 {
     GameObject* obj = new GameObject();
     obj->Initialize();
     _objects.push_back(obj);
+
+    _map = new Map();
+    _map->Demo();
 }
 
-void GameInstance::Run()
+void GameInstance::Update(float time)
 {
-    _isRunning = true;
+    _player->Update(time);
 
-    float acc = 0.0f;
-    while (_isRunning)
+    for (auto obj : _objects)
     {
-        // if (_kbhit() != 0)
-        // {
-        //     if (_getch() == 27)
-        //     {
-        //         _isRunning = false;
-        //     }
-        // }
-        
-        // player gets one frame up on everything else
-        _player->Update(0.025f);
-
-        for (auto& cur : _objects)
-        {
-            cur->Update(0.025f);
-        }
-
-        std::this_thread::sleep_for(std::chrono::milliseconds(25));
+        obj->Update(time);
     }
 }
 
+void GameInstance::Draw(float time, sf::RenderWindow& renderer)
+{
+    _map->Draw(time, renderer);
+    _player->Draw(time, renderer);
+}
+
+// void GameInstance::Draw(float time);
+// {
+//     _player->Draw(time);
+// }
+
+// void GameInstance::Run()
+// {
+//     _isRunning = true;
+
+//     float acc = 0.0f;
+//     while (_isRunning)
+//     {
+//         // if (_kbhit() != 0)
+//         // {
+//         //     if (_getch() == 27)
+//         //     {
+//         //         _isRunning = false;
+//         //     }
+//         // }
+        
+//         // player gets one frame up on everything else
+//         _player->Update(0.025f);
+
+//         for (auto& cur : _objects)
+//         {
+//             cur->Update(0.025f);
+//         }
+
+//         std::this_thread::sleep_for(std::chrono::milliseconds(25));
+//     }
+// }
+
 void GameInstance::Shutdown()
 {
-    _isRunning = false;
+    //_isRunning = false;
 
     if (_map != nullptr)
     {
