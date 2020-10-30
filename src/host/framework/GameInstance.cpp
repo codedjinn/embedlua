@@ -14,13 +14,14 @@ GameInstance::GameInstance()
 {
     _isRunning = false;
     _player = new Player();
-
 }
+
 void GameInstance::Demo()
 {
-    GameObject* obj = new GameObject();
-    obj->Initialize();
-    _objects.push_back(obj);
+    // GameObject* obj = new GameObject();
+    // obj->Initialize();
+    // _objects.push_back(obj);
+    _player->setPos(100.0f,100.0f);
 
     _map = new Map();
     _map->Demo();

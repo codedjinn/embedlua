@@ -1,9 +1,7 @@
 
-keyboard_mod = require("keyboard");
+keyboard = require("keyboard");
 
-Player = {
-    
-};
+Player = {};
 
 function Player:init()
 

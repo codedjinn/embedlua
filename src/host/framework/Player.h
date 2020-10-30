@@ -10,7 +10,10 @@ class Player
     private:
         float _faceDir;
         sf::Vector2f _pos;
-        void HandleKeys();
+        void HandleKeys(float time);
+
+        sf::RectangleShape _shape;
+        sf::RectangleShape _pp;
 
     public:
         Player();
@@ -19,6 +22,9 @@ class Player
         void Draw(float time, sf::RenderWindow& renderer);
 
         const sf::Vector2f getPos() { return _pos; }
+        void setPos(sf::Vector2f value) { _pos = value; }
+        void setPos(float x, float y) { _pos = sf::Vector2f(x,y); }
+
         const float getFaceDir() { return _faceDir; }
 };
 

@@ -15,29 +15,51 @@ Player::Player()
     _pos.x = 0.0f;
     _pos.y = 0.0f;
     _faceDir = 0.0f;
+
+    _shape = sf::RectangleShape(sf::Vector2f(10, 20));
+    _shape.setOrigin(5, 10);
+    _shape.setFillColor(sf::Color::Blue);
+
+    _pp = sf::RectangleShape(sf::Vector2f(2,4));
+    _pp.setOrigin(1, 2);
 }
 
-const int KEY_W = 119;
-const int KEY_S = 115;
-const int KEY_A = 97;
-const int KEY_D = 77;
-
-void Player::HandleKeys()
+void Player::HandleKeys(float time)
 {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    {
+        _faceDir -= 0.1f;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    {
+        _faceDir += 0.1f;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    {
+        _pos.x = _pos.x + (_pos.x * _faceDir * time);
+        _pos.y = _pos.y - (_pos.y * _faceDir * time);
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    {
+    }
 }
 
 void Player::Update(float time)
 {
-    //HandleKeys();
+    HandleKeys(time);
 }
+
+bool once1 = true;
 
 void Player::Draw(float time, sf::RenderWindow& renderer)
 {
-    auto rect = sf::RectangleShape(sf::Vector2f(10, 20));
-    rect.setPosition(_pos);
-    rect.setRotation(_faceDir);
-    rect.setOutlineColor(sf::Color::Cyan);
-    renderer.draw(rect);
+    _shape.setPosition(_pos);
+    _shape.setRotation(_faceDir);
+
+    _pp.setPosition(_pos);
+
+    renderer.draw(_shape);
+    renderer.draw(_pp);
 }
 
 }

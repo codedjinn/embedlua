@@ -17,11 +17,23 @@ void Map::Demo()
     int y = 0;
     for (int i = 0; i < _length; i++)
     {
-        if (x == 0)
+        MapCell cell;
+        cell.x = x;
+        cell.y = y;
+        if (x == 0
+            || y == 0
+            || x == 19
+            || y == 19)
         {
-            _cells[i].Type = MapCellType::Wall;
+            cell.Type = MapCellType::Wall;
         }
+        else
+        {
+            cell.Type = MapCellType::Floor;
+        }        
+        _cells[i] = cell;
 
+        x++;
         if (x > _width - 1)
         {
             x = 0;
@@ -53,16 +65,20 @@ void Map::Draw(float time, sf::RenderWindow& renderer)
     for (int i = 0; i < _length; i++)
     {
         auto cell = _cells[i];
+
         if (cell.Type == MapCellType::Wall)
         {
             float rx = (float)x * Map::TileSize;
             float ry = (float)y * Map::TileSize;
-
-            // sf::RectangleShape shape(sf::Vector2f(Map::TileSize, Map::TileSize));
-            // shape.setOutlineColor(sf::Color::White);
-            // shape.setPosition(sf::Vector2f(rx,ry));
-            // renderer.draw(shape);
+            
+            sf::RectangleShape shape(sf::Vector2f(Map::TileSize, Map::TileSize));
+            shape.setOutlineColor(sf::Color::White);
+            shape.setOutlineThickness(0.2f);
+            shape.setPosition(sf::Vector2f(rx,ry));
+            renderer.draw(shape);
         }
+
+        x++;
         if (x > _width - 1)
         {
             x = 0;

@@ -9,6 +9,8 @@
 
 #include "framework/GameInstance.h"
 
+
+
 int main()
 {
     Engine::LogInfo("Starting Engine...");
@@ -17,9 +19,14 @@ int main()
     try
     {
         Engine::GameInstance game;
+        game.Demo();
         
         sf::RenderWindow window(sf::VideoMode(800, 600), "Embed");
 
+        int i = 0;
+        float fps = 0;
+        float time = 0;
+        long framesAcc = 0;
         while (window.isOpen())
         {
             sf::Event event;
@@ -29,11 +36,30 @@ int main()
                     window.close();
             }
 
-            game.Update(0);
+            float time = sf::Clock::getElapsedTime().asSeconds();
+            if (time > 1.0f)
+            {
+                fps = 1.0f / (float)framesAcc;
+            }
+            framesAcc++;
+
+            printf("FPS: %.4f", fps);
+           /// auto start = Clock::now();
+            // float timeDiff = (curTime.asSeconds() - prevTime.asSeconds());
+            // fps = 1.0f / timeDiff;
+
+            // i++;
+            // if (i < 100)
+            // {        
+            //     printf("seconds %.2f\n", curTime.asSeconds());
+            //     printf("timeDiff %.2f\n", timeDiff);
+            // }
+
+            game.Update(0.0f);
 
             window.clear();
 
-            game.Draw(0, window);
+            game.Draw(0.0f, window);
 
             // sf::RectangleShape rect(sf::Vector2f(120, 50));
             // rect.setSize(sf::Vector2f(100,100));
@@ -42,6 +68,10 @@ int main()
             // window.draw(rect);
 
             window.display();
+
+          //  auto end = Clock::now();
+           // printf("time %.10f", std::chrono::duration_cast<std::chrono::nanoseconds>(Clock::now()).count());
+           // printf("time %.10f", std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count());
         }
 
         // Engine::GameInstance game;
