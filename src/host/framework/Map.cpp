@@ -4,6 +4,7 @@
 
 #include "../lib/json/includes/json.h"
 
+#include "Logger.h"
 #include "JsonUtils.h"
 
 namespace Engine
