@@ -46,7 +46,7 @@ void Player::HandleKeys(float time)
 
 void Player::Update(float time)
 {
-    HandleKeys(time);
+    //HandleKeys(time);printf("Player.setPos %.2f %.2f", value.x, value.y);
 }
 
 bool once1 = true;

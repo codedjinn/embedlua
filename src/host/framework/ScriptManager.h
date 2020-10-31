@@ -6,6 +6,11 @@ namespace Engine
 class ScriptManager
 {
 
+    public:
+
+        
+
+
 };
 
 }

@@ -9,8 +9,6 @@
 
 #include "framework/GameInstance.h"
 
-
-
 int main()
 {
     Engine::LogInfo("Starting Engine...");
@@ -36,14 +34,14 @@ int main()
                     window.close();
             }
 
-            float time = sf::Clock::getElapsedTime().asSeconds();
-            if (time > 1.0f)
-            {
-                fps = 1.0f / (float)framesAcc;
-            }
-            framesAcc++;
+            // float time = sf::Clock::getElapsedTime().asSeconds();
+            // if (time > 1.0f)
+            // {
+            //     fps = 1.0f / (float)framesAcc;
+            // }
+            // framesAcc++;
 
-            printf("FPS: %.4f", fps);
+            // printf("FPS: %.4f", fps);
            /// auto start = Clock::now();
             // float timeDiff = (curTime.asSeconds() - prevTime.asSeconds());
             // fps = 1.0f / timeDiff;

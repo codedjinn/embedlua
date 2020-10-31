@@ -1,0 +1,43 @@
+{
+    "name": "map1",
+    "width": 20,
+    "height": 20,
+    "player_start": [ 10, 12 ],
+    "objects": [
+        {
+            "name": "obj1",
+            "pos": []
+        }
+    ],
+    "closedMap": true,
+    "cells": [
+        {
+            "pos": [ 4, 4 ],
+            "type": "Wall"
+        },
+        {
+            "pos": [ 5, 4 ],
+            "type": "Wall"
+        },
+        {
+            "pos": [ 6, 4 ],
+            "type": "Wall"
+        },
+        {
+            "pos": [ 7, 4 ],
+            "type": "Wall"
+        },
+        {
+            "pos": [ 8, 4 ],
+            "type": "Wall"
+        },
+        {
+            "pos": [ 9, 4 ],
+            "type": "Wall"
+        },
+        {
+            "pos": [ 10, 4 ],
+            "type": "Wall"
+        }
+    ]
+}
