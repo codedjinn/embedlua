@@ -123,8 +123,8 @@ void Map::Load(const std::string filename)
     {
         MapCell cell;
 
-        const Json::Value obj = cells[i];
-        const std::string type = obj.get("type", "").asString();
+        const Json::Value cur = cells[i];
+        const std::string type = cur.get("type", "").asString();
         
         if (type == "Wall")
         {   
@@ -135,11 +135,13 @@ void Map::Load(const std::string filename)
             cell.Type = MapCellType::Floor;
         }
 
-        cell.x = obj["pos"][0].asInt();
-        cell.y = obj["pos"][1].asInt();
+        cell.x = cur["pos"][0].asInt();
+        cell.y = cur["pos"][1].asInt();
 
         _model.Cells[i] = cell;
     }
+
+    const Json::Value object = root["objects"];
 
     this->Build();
 }

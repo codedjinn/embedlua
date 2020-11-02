@@ -30,6 +30,8 @@ set(
     framework/GameObjectFactory.cpp
     framework/GameInstance.h
     framework/GameInstance.cpp
+    framework/ScriptManager.h
+    framework/ScriptManager.cpp
     framework/Map.h
     framework/Map.cpp
     framework/Player.h

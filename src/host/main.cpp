@@ -7,6 +7,7 @@
 #include "framework/Utils.h"
 #include "framework/Logger.h"
 
+#include "framework/ScriptManager.h"
 #include "framework/GameInstance.h"
 
 int main()
@@ -16,6 +17,9 @@ int main()
     // limit try/catch usage
     try
     {
+        Engine::ScriptManager scriptMgr;
+        scriptMgr.Initialize();
+        
         Engine::GameInstance game;
         game.Demo();
         
