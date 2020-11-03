@@ -20,6 +20,7 @@ set(
     framework/Utils.cpp
     framework/JsonUtils.h
     framework/JsonUtils.cpp
+    framework/ServiceManager.h
     framework/Logger.h
     framework/Logger.cpp
     framework/GameObjectDef.h

@@ -4,10 +4,11 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "framework/ServiceManager.h"
+
 #include "framework/Utils.h"
 #include "framework/Logger.h"
 
-#include "framework/ScriptManager.h"
 #include "framework/GameInstance.h"
 
 int main()
@@ -17,10 +18,10 @@ int main()
     // limit try/catch usage
     try
     {
-        Engine::ScriptManager scriptMgr;
-        scriptMgr.Initialize();
-        
+        auto services = new Engine::ServiceManager();
+
         Engine::GameInstance game;
+        game.Initialize(services);
         game.Demo();
         
         sf::RenderWindow window(sf::VideoMode(800, 600), "Embed");
@@ -90,6 +91,9 @@ int main()
         // {
         //     LogInfo("Name " + def.getName());
         // }
+
+        delete services;
+        services = nullptr;
     }
     catch(const std::exception& e)
     {

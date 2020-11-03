@@ -10,43 +10,6 @@
 namespace Engine
 {
 
-// void Map::Demo()
-// {
-//     _width = 20;
-//     _height = 20;
-
-//     _length = _width * _height;
-//     _cells = new MapCell[_length];
-
-//     int x = 0;
-//     int y = 0;
-//     for (int i = 0; i < _length; i++)
-//     {
-//         MapCell cell;
-//         cell.x = x;
-//         cell.y = y;
-//         if (x == 0
-//             || y == 0
-//             || x == 19
-//             || y == 19)
-//         {
-//             cell.Type = MapCellType::Wall;
-//         }
-//         else
-//         {
-//             cell.Type = MapCellType::Floor;
-//         }        
-//         _cells[i] = cell;
-
-//         x++;
-//         if (x > _width - 1)
-//         {
-//             x = 0;
-//             y++;
-//         }
-//     }
-// }
-
 void Map::Build()
 {
     _cells = new MapCell[_length];
@@ -114,7 +77,7 @@ void Map::Load(const std::string filename)
 
     _model.PlayerStart  = sf::Vector2f((float)px * TileSize, (float)py * TileSize);
 
-    printf("p x: %.2f", _model.PlayerStart.x);
+    LogInfo("Loading cells...");
 
     const Json::Value cells = root["cells"];
     _model.Cells = new MapCell[cells.size()];
@@ -139,9 +102,28 @@ void Map::Load(const std::string filename)
         cell.y = cur["pos"][1].asInt();
 
         _model.Cells[i] = cell;
-    }
+    }    
 
-    const Json::Value object = root["objects"];
+    auto scriptMgr = _services->getScriptMgr();
+
+    const Json::Value objects = root["objects"];
+    for (int i = 0; i < objects.size(); i++)
+    {
+        const Json::Value cur = objects[i];
+        
+        const std::string name = cur.get("name", "").asString();
+        LogInfo("object [name] " + name);
+        if (!name.empty())
+        {
+            // let script manager handle this
+            scriptMgr.Load(name);
+        }
+        else
+        {
+            LogError("Object with no name found!");
+        }
+        
+    }
 
     this->Build();
 }

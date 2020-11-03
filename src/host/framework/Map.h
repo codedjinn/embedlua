@@ -3,7 +3,7 @@
 #include <string>
 
 #include <SFML/Graphics.hpp>
-
+#include "ServiceManager.h"
 #include "MapCell.h"
 
 namespace Engine
@@ -26,9 +26,12 @@ class Map
     private:
 
         int _length;
+
         MapCell* _cells;
 
         MapDefinition _model;
+
+        ServiceManager* _services;
 
         void Build();
 
@@ -36,7 +39,11 @@ class Map
 
         const float TileSize = 20.0f;
 
+        Map() {}
+
         void Load(const std::string filename);
+
+        void Init(ServiceManager* services) { _services = services; }
 
         // will need to implement this for actual game
         // void Load(std::string filename);

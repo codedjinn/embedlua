@@ -1,56 +1,214 @@
-30-10-2020 19:37:08 [INFO] Starting Engine...
-30-10-2020 23:55:50 [INFO] Starting Engine...
-30-10-2020 23:57:32 [INFO] Starting Engine...
-31-10-2020 00:38:29 [INFO] Starting Engine...
-31-10-2020 00:38:29 [INFO] Loading scripts...
-31-10-2020 00:38:29 [INFO] Scripts loaded.
-31-10-2020 00:39:05 [INFO] Starting Engine...
-31-10-2020 00:39:05 [INFO] Loading scripts...
-31-10-2020 00:39:06 [INFO] Scripts loaded.
-31-10-2020 00:40:31 [INFO] Starting Engine...
-31-10-2020 00:40:31 [INFO] Loading scripts...
-31-10-2020 00:40:31 [INFO] script
-31-10-2020 00:40:31 [INFO] Scripts loaded.
-31-10-2020 00:41:07 [INFO] Starting Engine...
-31-10-2020 00:41:07 [INFO] Loading scripts...
-31-10-2020 00:41:07 [INFO] script
-31-10-2020 00:41:07 [INFO] Scripts loaded.
-31-10-2020 00:41:29 [INFO] Starting Engine...
-31-10-2020 00:41:29 [INFO] Loading scripts...
-31-10-2020 00:41:29 [INFO] /script
-31-10-2020 00:41:29 [INFO] Scripts loaded.
-31-10-2020 00:42:06 [INFO] Starting Engine...
-31-10-2020 00:42:06 [INFO] Loading scripts...
-31-10-2020 00:42:06 [INFO] C:\dev\embedsharp\src\hostin\script
-31-10-2020 00:42:06 [INFO] Scripts loaded.
-31-10-2020 00:42:29 [INFO] Starting Engine...
-31-10-2020 00:42:29 [INFO] Loading scripts...
-31-10-2020 00:42:29 [INFO] C:\dev\embedsharp\src\host\bin\script
-31-10-2020 00:42:29 [INFO] Scripts loaded.
-31-10-2020 00:42:46 [INFO] Starting Engine...
-31-10-2020 00:42:46 [INFO] Loading scripts...
-31-10-2020 00:42:46 [INFO] C:\dev\embedsharp\src\host\bin\scripts
-31-10-2020 00:42:46 [INFO] dir found
-31-10-2020 00:42:46 [INFO] Scripts loaded.
-31-10-2020 00:43:31 [INFO] Starting Engine...
-31-10-2020 00:43:31 [INFO] Loading scripts...
-31-10-2020 00:43:31 [INFO] scripts
-31-10-2020 00:43:31 [INFO] dir found
-31-10-2020 00:43:32 [INFO] Scripts loaded.
-31-10-2020 00:45:46 [INFO] Starting Engine...
-31-10-2020 00:45:46 [INFO] Loading scripts...
-31-10-2020 00:45:46 [INFO] scripts
-31-10-2020 00:45:46 [INFO] dir found
-31-10-2020 00:45:46 [ERROR] Error parsing scripts\entity1.lua. Reason: * Line 2, Column 1
+03-11-2020 00:46:30 [INFO] Starting Engine...
+03-11-2020 00:46:30 [INFO] Loading cells...
+03-11-2020 00:46:30 [INFO] object [name] obj1
+03-11-2020 01:09:09 [INFO] Starting Engine...
+03-11-2020 01:09:09 [INFO] Loading cells...
+03-11-2020 01:09:09 [INFO] object [name] obj1
+03-11-2020 01:17:12 [INFO] Starting Engine...
+03-11-2020 01:17:12 [INFO] Loading cells...
+03-11-2020 01:17:12 [INFO] object [name] obj1
+03-11-2020 01:17:12 [INFO] scripts
+03-11-2020 01:17:12 [INFO] dir found
+03-11-2020 01:17:12 [ERROR] Error parsing scripts\entity1.lua. Reason: * Line 2, Column 1
   Syntax error: value, object or array expected.
 
-31-10-2020 00:45:46 [INFO] Unable to parse file, scripts\entity1.lua
-31-10-2020 00:45:47 [ERROR] Error parsing scripts\keyboard.lua. Reason: * Line 1, Column 1
+03-11-2020 01:17:12 [ERROR] Error parsing scripts\keyboard.lua. Reason: * Line 1, Column 1
   Syntax error: value, object or array expected.
 
-31-10-2020 00:45:47 [INFO] Unable to parse file, scripts\keyboard.lua
-31-10-2020 00:45:47 [ERROR] Error parsing scripts\player.lua. Reason: * Line 2, Column 1
+03-11-2020 01:17:12 [ERROR] Error parsing scripts\player.lua. Reason: * Line 2, Column 1
   Syntax error: value, object or array expected.
 
-31-10-2020 00:45:47 [INFO] Unable to parse file, scripts\player.lua
-31-10-2020 00:45:47 [INFO] Scripts loaded.
+03-11-2020 01:21:51 [INFO] Starting Engine...
+03-11-2020 01:21:51 [INFO] Loading cells...
+03-11-2020 01:21:51 [INFO] object [name] obj1
+03-11-2020 01:21:51 [INFO] objects
+03-11-2020 01:21:51 [INFO] dir found
+03-11-2020 01:21:51 [INFO] Script: entity1.lua
+03-11-2020 01:22:28 [INFO] Starting Engine...
+03-11-2020 01:22:28 [INFO] Loading cells...
+03-11-2020 01:22:28 [INFO] object [name] obj1
+03-11-2020 01:22:28 [INFO] objects
+03-11-2020 01:22:28 [INFO] dir found
+03-11-2020 01:22:28 [INFO] Script: entity1.lua
+03-11-2020 01:28:23 [INFO] Starting Engine...
+03-11-2020 01:28:23 [INFO] Loading cells...
+03-11-2020 01:28:23 [INFO] object [name] obj1
+03-11-2020 01:28:23 [INFO] objects
+03-11-2020 01:28:23 [INFO] dir found
+03-11-2020 01:28:23 [INFO] Script: entity1.lua
+03-11-2020 01:28:51 [INFO] Starting Engine...
+03-11-2020 01:28:51 [INFO] Loading cells...
+03-11-2020 01:28:51 [INFO] object [name] obj1
+03-11-2020 01:28:51 [INFO] objects
+03-11-2020 01:28:51 [INFO] dir found
+03-11-2020 01:28:51 [INFO] Script: entity1.lua
+03-11-2020 01:29:28 [INFO] Starting Engine...
+03-11-2020 01:29:28 [INFO] Loading cells...
+03-11-2020 01:29:28 [INFO] object [name] obj1
+03-11-2020 01:29:28 [INFO] objects
+03-11-2020 01:29:28 [INFO] dir found
+03-11-2020 01:29:28 [INFO] Script: entity1.lua
+03-11-2020 01:29:45 [INFO] Starting Engine...
+03-11-2020 01:30:01 [INFO] Starting Engine...
+03-11-2020 01:30:03 [INFO] Starting Engine...
+03-11-2020 01:30:26 [INFO] Starting Engine...
+03-11-2020 01:38:39 [INFO] Starting Engine...
+03-11-2020 01:39:03 [INFO] Starting Engine...
+03-11-2020 01:39:03 [INFO] Loading cells...
+03-11-2020 01:39:03 [INFO] object [name] obj1
+03-11-2020 01:39:03 [INFO] scripts
+03-11-2020 01:39:03 [INFO] dir found
+03-11-2020 01:39:03 [ERROR] Error parsing scripts\entity1.lua. Reason: * Line 2, Column 1
+  Syntax error: value, object or array expected.
+
+03-11-2020 01:39:03 [ERROR] Error parsing scripts\keyboard.lua. Reason: * Line 1, Column 1
+  Syntax error: value, object or array expected.
+
+03-11-2020 01:39:03 [ERROR] Error parsing scripts\player.lua. Reason: * Line 2, Column 1
+  Syntax error: value, object or array expected.
+
+03-11-2020 01:39:41 [INFO] Starting Engine...
+03-11-2020 01:39:41 [INFO] Loading cells...
+03-11-2020 01:39:41 [INFO] object [name] obj1
+03-11-2020 01:39:41 [INFO] scripts
+03-11-2020 01:39:41 [INFO] dir found
+03-11-2020 01:39:41 [ERROR] Error parsing scripts\entity1.lua. Reason: * Line 2, Column 1
+  Syntax error: value, object or array expected.
+
+03-11-2020 01:39:41 [ERROR] Error parsing scripts\keyboard.lua. Reason: * Line 1, Column 1
+  Syntax error: value, object or array expected.
+
+03-11-2020 01:39:41 [ERROR] Error parsing scripts\player.lua. Reason: * Line 2, Column 1
+  Syntax error: value, object or array expected.
+
+03-11-2020 01:40:14 [INFO] Starting Engine...
+03-11-2020 01:40:14 [INFO] Loading cells...
+03-11-2020 01:40:14 [INFO] object [name] obj1
+03-11-2020 01:40:14 [INFO] objects
+03-11-2020 01:40:14 [INFO] dir found
+03-11-2020 01:40:14 [INFO] Script: entity1.lua
+03-11-2020 01:42:12 [INFO] Starting Engine...
+03-11-2020 01:42:12 [INFO] Loading cells...
+03-11-2020 01:42:12 [INFO] object [name] obj1
+03-11-2020 01:42:12 [INFO] objects
+03-11-2020 01:42:12 [INFO] dir found
+03-11-2020 01:42:12 [INFO] Object name: ent1
+03-11-2020 01:42:40 [INFO] Starting Engine...
+03-11-2020 01:42:40 [INFO] Loading cells...
+03-11-2020 01:42:40 [INFO] object [name] obj1
+03-11-2020 01:42:40 [INFO] objects
+03-11-2020 01:42:40 [INFO] dir found
+03-11-2020 01:42:40 [INFO] Object name: ent1
+03-11-2020 01:43:26 [INFO] Starting Engine...
+03-11-2020 01:43:26 [INFO] Loading cells...
+03-11-2020 01:43:26 [INFO] object [name] obj1
+03-11-2020 01:43:26 [INFO] objects
+03-11-2020 01:43:26 [INFO] dir found
+03-11-2020 01:43:26 [INFO] Object name: ent1
+03-11-2020 01:43:47 [INFO] Starting Engine...
+03-11-2020 01:43:47 [INFO] Loading cells...
+03-11-2020 01:43:47 [INFO] object [name] obj1
+03-11-2020 01:43:47 [INFO] objects
+03-11-2020 01:43:47 [INFO] dir found
+03-11-2020 01:43:47 [INFO] Object name: ent1
+03-11-2020 01:43:47 [INFO] Function name: obj1
+03-11-2020 01:44:03 [INFO] Starting Engine...
+03-11-2020 01:44:03 [INFO] Loading cells...
+03-11-2020 01:44:03 [INFO] object [name] ent1
+03-11-2020 01:44:03 [INFO] objects
+03-11-2020 01:44:03 [INFO] dir found
+03-11-2020 01:44:03 [INFO] Object name: ent1
+03-11-2020 01:44:03 [INFO] Function name: ent1
+03-11-2020 01:44:03 [INFO] checking if linked to script
+03-11-2020 01:44:03 [INFO] scripts
+03-11-2020 01:44:03 [INFO] dir found
+03-11-2020 01:44:37 [INFO] Starting Engine...
+03-11-2020 01:44:37 [INFO] Loading cells...
+03-11-2020 01:44:37 [INFO] object [name] ent1
+03-11-2020 01:44:37 [INFO] objects
+03-11-2020 01:44:37 [INFO] dir found
+03-11-2020 01:44:37 [INFO] Object name: ent1
+03-11-2020 01:44:37 [INFO] Function name: ent1
+03-11-2020 01:44:37 [INFO] checking if linked to script
+03-11-2020 01:44:37 [INFO] scripts
+03-11-2020 01:44:37 [INFO] dir found
+03-11-2020 01:46:28 [INFO] Starting Engine...
+03-11-2020 01:46:28 [INFO] Loading cells...
+03-11-2020 01:46:28 [INFO] object [name] ent1
+03-11-2020 01:46:28 [INFO] objects
+03-11-2020 01:46:28 [INFO] dir found
+03-11-2020 01:46:28 [INFO] scripts
+03-11-2020 01:46:28 [INFO] dir found
+03-11-2020 01:46:28 [INFO] content 
+03-11-2020 01:47:03 [INFO] Starting Engine...
+03-11-2020 01:47:03 [INFO] Loading cells...
+03-11-2020 01:47:03 [INFO] object [name] ent1
+03-11-2020 01:47:03 [INFO] objects
+03-11-2020 01:47:03 [INFO] dir found
+03-11-2020 01:47:03 [INFO] filename entity1.lua
+03-11-2020 01:47:03 [INFO] scripts
+03-11-2020 01:47:03 [INFO] dir found
+03-11-2020 01:47:03 [INFO] file scripts\entity1.lua
+03-11-2020 01:47:03 [INFO] file scripts\keyboard.lua
+03-11-2020 01:47:03 [INFO] file scripts\player.lua
+03-11-2020 01:47:03 [INFO] content 
+03-11-2020 01:48:51 [INFO] Starting Engine...
+03-11-2020 01:48:51 [INFO] Loading cells...
+03-11-2020 01:48:51 [INFO] object [name] ent1
+03-11-2020 01:48:51 [INFO] objects
+03-11-2020 01:48:51 [INFO] dir found
+03-11-2020 01:48:51 [INFO] filename entity1.lua
+03-11-2020 01:48:51 [INFO] test_str entity1.lua
+03-11-2020 01:48:51 [INFO] scripts
+03-11-2020 01:48:51 [INFO] dir found
+03-11-2020 01:48:51 [INFO] file scripts\entity1.lua
+03-11-2020 01:48:51 [INFO] file scripts\keyboard.lua
+03-11-2020 01:48:51 [INFO] file scripts\player.lua
+03-11-2020 01:48:51 [INFO] content 
+03-11-2020 01:49:02 [INFO] Starting Engine...
+03-11-2020 01:49:02 [INFO] Loading cells...
+03-11-2020 01:49:02 [INFO] object [name] ent1
+03-11-2020 01:49:02 [INFO] objects
+03-11-2020 01:49:02 [INFO] dir found
+03-11-2020 01:49:02 [INFO] filename entity1.lua
+03-11-2020 01:49:02 [INFO] test_str entity1.lua
+03-11-2020 01:49:02 [INFO] scripts
+03-11-2020 01:49:02 [INFO] dir found
+03-11-2020 01:49:02 [INFO] file scripts\entity1.lua
+03-11-2020 01:49:02 [INFO] file scripts\keyboard.lua
+03-11-2020 01:49:02 [INFO] file scripts\player.lua
+03-11-2020 01:49:02 [INFO] content 
+03-11-2020 01:49:08 [INFO] Starting Engine...
+03-11-2020 01:49:08 [INFO] Loading cells...
+03-11-2020 01:49:08 [INFO] object [name] ent1
+03-11-2020 01:49:08 [INFO] objects
+03-11-2020 01:49:08 [INFO] dir found
+03-11-2020 01:49:08 [INFO] filename entity1.lua
+03-11-2020 01:49:08 [INFO] test_str scripts/entity1.lua
+03-11-2020 01:49:08 [INFO] scripts
+03-11-2020 01:49:08 [INFO] dir found
+03-11-2020 01:49:08 [INFO] file scripts\entity1.lua
+03-11-2020 01:49:08 [INFO] file scripts\keyboard.lua
+03-11-2020 01:49:08 [INFO] file scripts\player.lua
+03-11-2020 01:49:08 [INFO] content 
+03-11-2020 01:49:17 [INFO] Starting Engine...
+03-11-2020 01:49:17 [INFO] Loading cells...
+03-11-2020 01:49:17 [INFO] object [name] ent1
+03-11-2020 01:49:17 [INFO] objects
+03-11-2020 01:49:17 [INFO] dir found
+03-11-2020 01:49:17 [INFO] filename entity1.lua
+03-11-2020 01:49:17 [INFO] test_str scripts\entity1.lua
+03-11-2020 01:49:17 [INFO] scripts
+03-11-2020 01:49:17 [INFO] dir found
+03-11-2020 01:49:17 [INFO] file scripts\entity1.lua
+03-11-2020 01:49:17 [INFO] file scripts\keyboard.lua
+03-11-2020 01:49:17 [INFO] file scripts\player.lua
+03-11-2020 01:49:17 [INFO] content 
+function init()
+    print("init from LUA");
+    return true;
+end
+
+function update(time)
+    print("update" .. tostring(time*2));
+endÿ
