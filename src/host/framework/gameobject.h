@@ -23,6 +23,9 @@ class GameObject
 
     public:
 
+        GameObject() {}
+        //GameObject(GameObject&& ref) {}
+
         void Initialize();
         void Update(float time);
         void Draw(float time);

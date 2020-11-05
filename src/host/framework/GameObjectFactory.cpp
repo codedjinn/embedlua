@@ -9,6 +9,53 @@
 namespace Engine
 {
 
+// std::pair<bool,GameObject&> GameObjectFactory::Create(std::string name)
+// {
+//     // check if definition loaded
+//     auto findItem = _definitions.find(name);
+//     if (findItem != _definitions.end())
+//     {
+//         auto obj = new GameObject();
+//         return std::pair<bool,GameObject&>(true,*obj);
+//     }
+//     return std::pair<bool,GameObject&>(false);
+// }
+
+bool GameObjectFactory::Create(std::string name, GameObject& obj)
+{
+    // check if definition loaded
+    auto item = _definitions.Get(name);
+    if (!item.empty())
+    {
+        GameObject* newObj = new GameObject();
+        obj = *newObj;
+        return true;
+    }
+    return false;
+}
+
+void GameObjectFactory::Initialize()
+{
+    auto files = GetFiles("objects");
+    for (std::string file : files)
+    {
+        Json::Value root;
+        if (ParseJsonFile(file, root))
+        {
+            std::string objName = root.get("name", "").asString();
+            if (!objName.empty())
+            {
+                std::string script = root.get("script", "").asString();
+                if (!script.empty())
+                {
+                    _definitions.Add(objName, script);
+                }
+            }            
+        }
+    }
+}
+
+
 // void GameObjectFactory::Initialize()
 // {
 //     LogInfo("[GameObjectFactory]<Initialize> Enter");

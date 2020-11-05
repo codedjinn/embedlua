@@ -26,7 +26,7 @@ class GameInstance
         
         Map* _map;
         Player* _player;
-        std::vector<GameObject*> _objects;        
+        std::vector<GameObject*> _objects;
 
         ServiceManager* _services;
 

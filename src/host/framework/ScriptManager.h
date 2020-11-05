@@ -1,6 +1,5 @@
 #pragma once
 
-#include <map>
 #include <string>
 
 namespace Engine
@@ -14,7 +13,7 @@ class ScriptManager
 {
     private:
 
-        std::map<std::string, std::string> _scripts;
+       // std::map<std::string, std::string> _scripts;
 
         std::string FindScript(std::string name);
         std::string GetScript(std::string filename);

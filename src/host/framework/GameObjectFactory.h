@@ -1,9 +1,9 @@
 #pragma once
 
 #include <string>
-#include <vector>
 
-//#include "GameObjectDef.h"
+#include "Lookup.h"
+#include "GameObject.h"
 
 namespace Engine
 {
@@ -12,7 +12,9 @@ class GameObjectFactory
 {
     private:
 
-       // std::vector<GameObjectDef> _definitions;
+      Lookup _definitions;
+
+      //  std::map<char*, char*> _definitions;
 
         //std::map<std::string, std::string> _scripts;
         bool _isInitialized;
@@ -21,7 +23,7 @@ class GameObjectFactory
 
         void Initialize();
 
-        //const GameObject& Create(std::string name);
+        bool Create(std::string name, GameObject& obj);
 
         // const std::vector<GameObjectDef> getDefinitions()
         // {

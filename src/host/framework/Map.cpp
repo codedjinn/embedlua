@@ -105,6 +105,7 @@ void Map::Load(const std::string filename)
     }    
 
     auto scriptMgr = _services->getScriptMgr();
+    auto objMgr = _services->getObjectFactory();
 
     const Json::Value objects = root["objects"];
     for (int i = 0; i < objects.size(); i++)
@@ -115,14 +116,21 @@ void Map::Load(const std::string filename)
         LogInfo("object [name] " + name);
         if (!name.empty())
         {
-            // let script manager handle this
-            scriptMgr.Load(name);
+            GameObject obj;
+            if (objMgr.Create(name, obj))
+            {
+                LogInfo("Object created successul: " + name);
+            }
+            else
+            {
+                LogError("Cloud not create object: " + name);
+            }
+            
         }
         else
         {
             LogError("Object with no name found!");
         }
-        
     }
 
     this->Build();

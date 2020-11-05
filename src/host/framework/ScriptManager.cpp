@@ -25,16 +25,16 @@ void ScriptManager::Initialize()
 
 void ScriptManager::Load(std::string name)
 {
-    auto existing = _scripts.find(name);
-    if (existing == _scripts.end())
-    {
-        std::string script_name = this->FindScript(name);
-        if (!script_name.empty())
-        {
-            std::string json = this->GetScript(script_name);
-            _scripts.insert(name, json);
-        }
-    }
+    // auto existing = _scripts.find(name);
+    // if (existing == _scripts.end())
+    // {
+    //     std::string script_name = this->FindScript(name);
+    //     if (!script_name.empty())
+    //     {
+    //         std::string json = this->GetScript(script_name);
+    //         _scripts.insert(name, json);
+    //     }
+    // }
 }
 
 std::string ScriptManager::FindScript(std::string name)
