@@ -61,9 +61,11 @@ void Map::Load(const std::string filename)
 
     if (!ParseJsonFile(filename, root))
     {
-        printf("Something went wrong!");
+        LogError("Couldn't parse map " + filename);
         return;
     }
+
+    LogInfo("Map::Load | name - " + filename);
 
     _model.Name = root.get("name", "<no_name_found>").asString();
     _model.IsClosed = root.get("closedMap", "true").asBool();
@@ -105,7 +107,7 @@ void Map::Load(const std::string filename)
     }    
 
     auto scriptMgr = _services->getScriptMgr();
-    auto objMgr = _services->getObjectFactory();
+    auto objFactory = _services->getObjectFactory();
 
     const Json::Value objects = root["objects"];
     for (int i = 0; i < objects.size(); i++)
@@ -113,23 +115,25 @@ void Map::Load(const std::string filename)
         const Json::Value cur = objects[i];
         
         const std::string name = cur.get("name", "").asString();
-        LogInfo("object [name] " + name);
+        LogInfo("Map::Load | object [name] " + name);
         if (!name.empty())
         {
-            GameObject obj;
-            if (objMgr.Create(name, obj))
+            GameObject* obj = objFactory.Create(name);
+
+            // set position in world
+            auto tmp = cur["pos"];
+            if (!tmp.empty())
             {
-                LogInfo("Object created successul: " + name);
+                float x = tmp[0].asFloat() * Map::TileSize;
+                float y = tmp[1].asFloat() * Map::TileSize;
+                obj->setPos(sf::Vector2f(x,y));
             }
-            else
-            {
-                LogError("Cloud not create object: " + name);
-            }
-            
+
+            _objects.push_back(obj);
         }
         else
         {
-            LogError("Object with no name found!");
+            LogError("Object with no name found. " + name);
         }
     }
 
@@ -178,6 +182,14 @@ void Map::Draw(float time, sf::RenderWindow& renderer)
             x = 0;
             y++;
         }
+    }
+
+    for (auto obj : _objects)
+    {
+        sf::CircleShape shape(10.0f);
+        shape.setPosition(obj->getPos());
+        shape.setFillColor(sf::Color::Red);
+        renderer.draw(shape);
     }
 }
 

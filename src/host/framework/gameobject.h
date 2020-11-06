@@ -18,6 +18,10 @@ class GameObject
         int _id;
         std::string _script;
 
+        sf::Vector2f _size;
+        sf::Vector2f _pos;
+        float _rotation;
+
         // bounding box
         sf::Rect<float> _bbox;
 
@@ -31,6 +35,9 @@ class GameObject
         void Draw(float time);
 
         sf::Rect<float> getBoundingBox() { return _bbox; }
+
+        sf::Vector2f getPos() { return _pos; }
+        void setPos(sf::Vector2f value) { _pos = value; }
     
     };
 

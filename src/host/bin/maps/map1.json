@@ -6,7 +6,7 @@
     "objects": [
         {
             "name": "ent1",
-            "pos": []
+            "pos": [ 10, 2]
         }
     ],
     "closedMap": true,

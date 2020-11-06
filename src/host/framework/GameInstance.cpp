@@ -5,6 +5,7 @@
 
 #include <conio.h>
 
+#include "Logger.h"
 #include "Keyboard.h"
 
 namespace Engine
@@ -20,16 +21,16 @@ GameInstance::GameInstance()
 void GameInstance::Initialize(ServiceManager* services)
 {
     _services = services;
+    _services->getObjectFactory().Initialize();
 }
 
 void GameInstance::Demo()
-{
+{   
     // GameObject* obj = new GameObject();
     // obj->Initialize();
     // _objects.push_back(obj);
-    _map = new Map();
-    _map->Init(_services);
-    ///_map->Initialize(this);
+    _map = new Map(_services);
+
     _map->Load(std::string("maps/map1.json"));
 
     auto pstart = _map->getPlayerStart();

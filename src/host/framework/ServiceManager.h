@@ -34,9 +34,9 @@ class ServiceManager
             }
         }
 
-        const ScriptManager& getScriptMgr() { return *_script; }
+        ScriptManager& getScriptMgr() { return *_script; }
 
-        const GameObjectFactory& getObjectFactory() { return *_objectFactory; }
+        GameObjectFactory& getObjectFactory() { return *_objectFactory; }
 };
 
 }

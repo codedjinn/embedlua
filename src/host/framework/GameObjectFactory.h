@@ -12,23 +12,14 @@ class GameObjectFactory
 {
     private:
 
-      Lookup _definitions;
-
-      //  std::map<char*, char*> _definitions;
-
-        //std::map<std::string, std::string> _scripts;
-        bool _isInitialized;
+      Lookup _objects;
+      bool _isInitialized;
 
     public:
 
         void Initialize();
 
-        bool Create(std::string name, GameObject& obj);
-
-        // const std::vector<GameObjectDef> getDefinitions()
-        // {
-        //     return _definitions;
-        // }
+         GameObject* Create(std::string name);
 };
 
 }

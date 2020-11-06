@@ -30,13 +30,13 @@ int main()
         float fps = 0;
         float time = 0;
         long framesAcc = 0;
-        while (window.isOpen())
-        {
+        while (window.isOpen()) {
+            
             sf::Event event;
-            while (window.pollEvent(event))
-            {
-                if (event.type == sf::Event::Closed)
+            while (window.pollEvent(event)) {
+                if (event.type == sf::Event::Closed) {
                     window.close();
+                }
             }
 
             // float time = sf::Clock::getElapsedTime().asSeconds();
