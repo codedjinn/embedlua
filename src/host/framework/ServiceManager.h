@@ -14,29 +14,13 @@ class ServiceManager
 
     public:
 
-        ServiceManager()
-        {
-            _script = new ScriptManager();
-            _objectFactory = new GameObjectFactory();
-        }
+        ServiceManager();
+        ~ServiceManager();
 
-        ~ServiceManager()
-        {
-            if (_script != nullptr)
-            {
-                delete _script;
-                _script = nullptr;
-            }
-            if (_objectFactory != nullptr)
-            {
-                delete _objectFactory;
-                _objectFactory = nullptr;
-            }
-        }
+        void Initialize();
 
-        ScriptManager& getScriptMgr() { return *_script; }
-
-        GameObjectFactory& getObjectFactory() { return *_objectFactory; }
+        ScriptManager& getScriptMgr();
+        GameObjectFactory& getObjectFactory();
 };
 
 }

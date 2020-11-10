@@ -11,9 +11,13 @@ namespace Engine
 
 void GameObjectFactory::Initialize()
 {
+    LogInfo("GameObjectFactory::Initialize()");
+
     auto files = GetFiles("objects");
     for (std::string file : files)
     {
+        LogDebug("file: " + file);
+        
         Json::Value root;
         if (ParseJsonFile(file, root))
         {
@@ -32,14 +36,20 @@ void GameObjectFactory::Initialize()
 
 GameObject* GameObjectFactory::Create(std::string name)
 {
+    GameObject* newObj = new GameObject();
+    newObj->setName(name);
+
     // check if definition loaded
-    auto item = _objects.Get(name);
-    if (!item.empty())
+    auto script = _objects.Get(name);
+
+    LogDebug("Script: " + (script.empty() ? "" : script));
+
+    if (!script.empty())
     {
-        GameObject* newObj = new GameObject();
-        return newObj;
+        newObj->setScript(script);
     }
-    return nullptr;
+
+    return newObj;
 }
 
 

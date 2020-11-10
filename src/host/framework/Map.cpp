@@ -10,6 +10,11 @@
 namespace Engine
 {
 
+Map::Map(ServiceManager* services)
+{
+    _services = services;
+}
+
 void Map::Build()
 {
     _cells = new MapCell[_length];
@@ -59,13 +64,13 @@ void Map::Load(const std::string filename)
 {
     Json::Value root;
 
+    LogInfo("Map::Load | name - " + filename);
+
     if (!ParseJsonFile(filename, root))
     {
         LogError("Couldn't parse map " + filename);
         return;
     }
-
-    LogInfo("Map::Load | name - " + filename);
 
     _model.Name = root.get("name", "<no_name_found>").asString();
     _model.IsClosed = root.get("closedMap", "true").asBool();
@@ -120,16 +125,25 @@ void Map::Load(const std::string filename)
         {
             GameObject* obj = objFactory.Create(name);
 
+            // let script manager handle the script
+            if (!obj->getScript().empty())
+            {
+                scriptMgr.Load(obj->getScript());
+            }
+
             // set position in world
             auto tmp = cur["pos"];
             if (!tmp.empty())
             {
                 float x = tmp[0].asFloat() * Map::TileSize;
                 float y = tmp[1].asFloat() * Map::TileSize;
-                obj->setPos(sf::Vector2f(x,y));
+                auto vec = sf::Vector2f(x,y);
+                obj->setPos(vec);                
             }
 
             _objects.push_back(obj);
+
+            LogInfo("Map::Load | ADDED");
         }
         else
         {

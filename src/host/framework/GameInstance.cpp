@@ -21,7 +21,6 @@ GameInstance::GameInstance()
 void GameInstance::Initialize(ServiceManager* services)
 {
     _services = services;
-    _services->getObjectFactory().Initialize();
 }
 
 void GameInstance::Demo()
@@ -30,7 +29,6 @@ void GameInstance::Demo()
     // obj->Initialize();
     // _objects.push_back(obj);
     _map = new Map(_services);
-
     _map->Load(std::string("maps/map1.json"));
 
     auto pstart = _map->getPlayerStart();
@@ -51,6 +49,11 @@ void GameInstance::Draw(float time, sf::RenderWindow& renderer)
 {
     _map->Draw(time, renderer);
     _player->Draw(time, renderer);
+
+    for (auto obj : _objects)
+    {
+        obj->Update(time);
+    }
 }
 
 // void GameInstance::Draw(float time);

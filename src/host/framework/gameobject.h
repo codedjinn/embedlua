@@ -16,6 +16,7 @@ class GameObject
     
         // will be set by the engine
         int _id;
+        std::string _name;
         std::string _script;
 
         sf::Vector2f _size;
@@ -27,18 +28,23 @@ class GameObject
 
     public:
 
-        GameObject() {}
+        GameObject();
         //GameObject(GameObject&& ref) {}
 
         void Initialize();
         void Update(float time);
         void Draw(float time);
 
-        sf::Rect<float> getBoundingBox() { return _bbox; }
+        sf::Rect<float> getBoundingBox();
 
-        sf::Vector2f getPos() { return _pos; }
-        void setPos(sf::Vector2f value) { _pos = value; }
-    
+        sf::Vector2f getPos();
+        void setPos(sf::Vector2f value);
+
+        std::string getName();
+        void setName(std::string value);
+
+        std::string getScript();
+        void setScript(std::string value);
     };
 
 }

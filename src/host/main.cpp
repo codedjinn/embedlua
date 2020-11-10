@@ -18,8 +18,9 @@ int main()
     // limit try/catch usage
     try
     {
-        auto services = new Engine::ServiceManager();
-
+        Engine::ServiceManager* services = new Engine::ServiceManager();
+        services->Initialize();
+        
         Engine::GameInstance game;
         game.Initialize(services);
         game.Demo();

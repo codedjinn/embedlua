@@ -102,7 +102,7 @@
 //     // lua_getglobal(lua, "init");
 //     // if (lua_isfunction(lua, -1))
 //     // {
-//     //     printf("found [init]\n");
+//     //     printf("f ound [init]\n");
 //     //     lua_pcall(lua, 0, 1, 0);
 
 //     //     int c = lua_toboolean(lua, -1);

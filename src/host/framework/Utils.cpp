@@ -18,12 +18,9 @@ std::vector<std::string> GetFiles(std::string path)
     DIR* dir;
     dirent* ent;
 
-    LogInfo(path);
-
     // if directory isn't found it will be null
     if ((dir = opendir(path.c_str())) != nullptr)
     {
-        LogInfo("dir found");
         while ((ent = readdir(dir)) != nullptr)
         {
             std::string filename(ent->d_name);

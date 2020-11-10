@@ -4,11 +4,11 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "ServiceManager.h"
-
 #include "Map.h"
 #include "Player.h"
 #include "GameObject.h"
+
+#include "ServiceManager.h"
 
 namespace Engine
 {

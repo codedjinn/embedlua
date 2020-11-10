@@ -23,6 +23,7 @@ set(
     framework/Lookup.h
     framework/Lookup.cpp
     framework/ServiceManager.h
+    framework/ServiceManager.cpp
     framework/Logger.h
     framework/Logger.cpp
     framework/GameObjectDef.h

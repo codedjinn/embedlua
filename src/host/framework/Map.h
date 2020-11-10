@@ -4,8 +4,11 @@
 #include <vector>
 
 #include <SFML/Graphics.hpp>
-#include "ServiceManager.h"
 #include "MapCell.h"
+
+#include "ServiceManager.h"
+
+#include "GameObject.h"
 
 namespace Engine
 {
@@ -32,17 +35,19 @@ class Map
 
         MapDefinition _model;
 
-        ServiceManager* _services;
-
         std::vector<GameObject*> _objects;
 
+        ServiceManager* _services;
+
         void Build();
+
+        
 
     public:
 
         const float TileSize = 20.0f;
 
-        Map(ServiceManager* services) { _services = services; }
+        Map(ServiceManager* services);
 
         void Load(const std::string filename);
 

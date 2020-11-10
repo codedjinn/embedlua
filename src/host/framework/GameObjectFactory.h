@@ -12,14 +12,16 @@ class GameObjectFactory
 {
     private:
 
-      Lookup _objects;
-      bool _isInitialized;
+        Lookup _objects;
+        bool _isInitialized;
 
     public:
 
         void Initialize();
 
-         GameObject* Create(std::string name);
+        GameObject* Create(std::string name);
+
+        static GameObjectFactory& get();
 };
 
 }
