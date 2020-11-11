@@ -26,12 +26,17 @@ class GameObject
         // bounding box
         sf::Rect<float> _bbox;
 
+        // faster than std::string.empty() check ? test later
+        bool _hasScript;
+
+        void* _services;
+
     public:
 
         GameObject();
         //GameObject(GameObject&& ref) {}
 
-        void Initialize();
+        void Initialize(void* services);
         void Update(float time);
         void Draw(float time);
 

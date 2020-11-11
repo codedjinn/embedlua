@@ -19,6 +19,7 @@ void Log(LogType type, std::string str);
 void LogInfo(std::string str);
 void LogDebug(std::string str);
 void LogError(std::string str);
+void LogPerCount(std::string str, int mod);
 
 }
 

@@ -1,12 +1,13 @@
 
-entity1 = {};
+ent = {};
 
-entity1.init = function()
+ent.init = function()
     print("init from LUA");
     return true;
 end
 
-entity1.update = function(time)
-    print("update" .. tostring(time*2));
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
 end
 

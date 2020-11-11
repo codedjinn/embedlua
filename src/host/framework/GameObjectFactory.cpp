@@ -36,20 +36,28 @@ void GameObjectFactory::Initialize()
 
 GameObject* GameObjectFactory::Create(std::string name)
 {
-    GameObject* newObj = new GameObject();
-    newObj->setName(name);
+    LogDebug("GameObjectFactory::Create | " + name);
 
-    // check if definition loaded
-    auto script = _objects.Get(name);
-
-    LogDebug("Script: " + (script.empty() ? "" : script));
-
-    if (!script.empty())
+    if (_objects.HasKey(name))
     {
-        newObj->setScript(script);
+        GameObject* newObj = new GameObject();
+        newObj->setName(name);
+
+        // if it has script, set property
+        auto script = _objects.Get(name);
+
+        LogDebug("Script: " + (script.empty() ? "<no_script_found>" : script));
+
+        if (!script.empty())
+        {
+            newObj->setScript(script);
+        }
+
+        return newObj;
     }
 
-    return newObj;
+    LogDebug("GameObjectFactory::Create | No definition found for " + name);
+    return nullptr;
 }
 
 

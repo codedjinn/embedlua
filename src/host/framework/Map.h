@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "../lib/json/includes/json.h"
+
 #include <SFML/Graphics.hpp>
 #include "MapCell.h"
 
@@ -41,7 +43,8 @@ class Map
 
         void Build();
 
-        
+        void LoadCells(Json::Value root);
+        void LoadObjects(Json::Value root);
 
     public:
 
@@ -63,6 +66,7 @@ class Map
         const sf::Vector2f getPlayerStart() { return _model.PlayerStart; }
 
         void Draw(float time, sf::RenderWindow& renderer);
+        void Update(float time);
 };
 
 }

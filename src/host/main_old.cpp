@@ -103,7 +103,7 @@
 //     // if (lua_isfunction(lua, -1))
 //     // {
 //     //     printf("f ound [init]\n");
-//     //     lua_pcall(lua, 0, 1, 0);
+//     //     lua_pcall(lua, 0, 1, 0)
 
 //     //     int c = lua_toboolean(lua, -1);
 //     //     printf("ret num %d", (bool)c);

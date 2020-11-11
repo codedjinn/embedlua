@@ -12,11 +12,13 @@ namespace Engine
 // rework later
 bool _logToConsole = true;
 std::mutex mtx;
+int acc = 0;
 
 // optimize later
 void Log(LogType type, std::string str)
 {
-    // very lazy thread-safety
+    // very lazy thread-safety, don't use for actual
+    // game implementation, can cause frame locks
     mtx.lock();
 
     std::string log;
@@ -48,6 +50,7 @@ void Log(LogType type, std::string str)
     log.append(str);
     log.append("\n");
 
+    // change to std::io::app later
     std::ofstream file("engine.log", std::ios::app);
     file << log;
     file.close();
@@ -73,6 +76,20 @@ void LogDebug(std::string str)
 void LogError(std::string str)
 {
     Log(LogType::Error, str);
+}
+
+void LogPerCount(std::string str, int mod)
+{
+    acc++;
+    if (acc % mod == 0)
+    {
+        Log(LogType::Info, str);
+    }
+
+    if (acc == 2147483646)
+    {
+        acc = 0;
+    }
 }
 
 }

@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.0.0)
 project(host VERSION 0.1.0)
 
 add_definitions(-DSFML_STATIC)
+
+set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
+
 #include(CTest)
 # enable_testing()
 

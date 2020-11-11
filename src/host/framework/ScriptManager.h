@@ -14,6 +14,9 @@ namespace Engine
 class ScriptManager
 {
     private:
+
+        bool _isInitialized;
+
         lua_State* _lua;
 
         std::string FindScript(std::string name);
@@ -21,12 +24,15 @@ class ScriptManager
 
     public:
 
+        ScriptManager();
         ~ScriptManager();
         
         // initialization loads script from the 'script' directory
         void Initialize();
 
         void Load(std::string name);
+
+        void ExecuteMethod(std::string name);
         
 };
 

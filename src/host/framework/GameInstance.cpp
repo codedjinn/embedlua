@@ -39,10 +39,11 @@ void GameInstance::Update(float time)
 {
     _player->Update(time);
 
-    for (auto obj : _objects)
-    {
-        obj->Update(time);
-    }
+    _map->Update(time);
+    // for (auto obj : _objects)
+    // {
+    //     obj->Update(time);
+    // }
 }
 
 void GameInstance::Draw(float time, sf::RenderWindow& renderer)

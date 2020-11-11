@@ -1,15 +1,444 @@
-10-11-2020 00:39:55 [INFO] Starting Engine...
-10-11-2020 00:39:55 [INFO] ScriptManager::Initialize | creating Lua state object
-10-11-2020 00:39:55 [INFO] ScriptManager::Initialize | DONE
-10-11-2020 00:39:55 [INFO] GameObjectFactory::Initialize()
-10-11-2020 00:39:55 [INFO] objects
-10-11-2020 00:39:55 [INFO] dir found
-10-11-2020 00:39:55 [DEBUG] file: objects\entity1.json
-10-11-2020 00:39:55 [INFO] Map::Load | name - maps/map1.json
-10-11-2020 00:39:55 [INFO] Loading cells...
-10-11-2020 00:39:55 [INFO] Map::Load | object [name] ent1
-10-11-2020 00:39:55 [DEBUG] Script: entity1.lua
-10-11-2020 00:39:55 [DEBUG] ScriptManager::Load | entity1.lua
-10-11-2020 00:39:55 [INFO] objects
-10-11-2020 00:39:55 [INFO] dir found
-10-11-2020 00:39:55 [INFO] Map::Load | ADDED
+11-11-2020 00:16:50 [INFO] Starting Engine...
+11-11-2020 00:16:50 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:16:50 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:16:50 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:16:50 [DEBUG] file: objects\entity1.json
+11-11-2020 00:16:50 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:16:50 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:16:50 [DEBUG] Map::Load | object [name] ent1
+11-11-2020 00:16:50 [DEBUG] Script: <no_script_found>
+11-11-2020 00:16:50 [DEBUG] Map::Load | object added
+11-11-2020 00:18:04 [INFO] Starting Engine...
+11-11-2020 00:18:04 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:18:04 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:18:04 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:18:04 [DEBUG] file: objects\entity1.json
+11-11-2020 00:18:04 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:18:04 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:18:04 [DEBUG] Map::Load | object [name] ent1
+11-11-2020 00:18:04 [DEBUG] Script: <no_script_found>
+11-11-2020 00:18:04 [DEBUG] Map::Load | object added
+11-11-2020 00:19:00 [INFO] Starting Engine...
+11-11-2020 00:19:00 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:19:00 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:19:00 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:19:00 [DEBUG] file: objects\entity1.json
+11-11-2020 00:19:00 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:19:00 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:19:00 [DEBUG] Map::Load | object [name] ent1
+11-11-2020 00:19:00 [DEBUG] Lookup::Get - ent
+11-11-2020 00:19:00 [DEBUG] Script: <no_script_found>
+11-11-2020 00:19:00 [DEBUG] Map::Load | object added
+11-11-2020 00:19:50 [INFO] Starting Engine...
+11-11-2020 00:19:50 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:19:50 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:19:50 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:19:50 [DEBUG] file: objects\entity1.json
+11-11-2020 00:19:50 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:19:50 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:19:50 [DEBUG] Map::Load | object [name] ent1
+11-11-2020 00:19:50 [DEBUG] Lookup::Get - ent | entity1.lua
+11-11-2020 00:19:50 [DEBUG] Script: <no_script_found>
+11-11-2020 00:19:50 [DEBUG] Map::Load | object added
+11-11-2020 00:20:40 [INFO] Starting Engine...
+11-11-2020 00:20:40 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:20:40 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:20:40 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:20:40 [DEBUG] file: objects\entity1.json
+11-11-2020 00:20:40 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:20:40 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:20:40 [DEBUG] Map::Load | object [name] ent1
+11-11-2020 00:20:40 [DEBUG] Lookup::Get - ent | ent1
+11-11-2020 00:20:40 [DEBUG] Script: <no_script_found>
+11-11-2020 00:20:40 [DEBUG] Map::Load | object added
+11-11-2020 00:21:31 [INFO] Starting Engine...
+11-11-2020 00:21:31 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:21:31 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:21:31 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:21:31 [DEBUG] file: objects\entity1.json
+11-11-2020 00:21:31 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:21:31 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:21:31 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:21:31 [DEBUG] Lookup::Get - ent | ent
+11-11-2020 00:21:31 [DEBUG] Script: entity1.lua
+11-11-2020 00:21:31 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:21:31 [DEBUG] Map::Load | object added
+11-11-2020 00:21:31 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:22:36 [INFO] Starting Engine...
+11-11-2020 00:22:36 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:22:36 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:22:36 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:22:36 [DEBUG] file: objects\entity1.json
+11-11-2020 00:22:36 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:22:36 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:22:36 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:22:36 [DEBUG] Script: entity1.lua
+11-11-2020 00:22:36 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:22:36 [DEBUG] Map::Load | object added
+11-11-2020 00:22:36 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:23:47 [INFO] Starting Engine...
+11-11-2020 00:23:47 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:23:47 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:23:47 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:23:47 [DEBUG] file: objects\entity1.json
+11-11-2020 00:23:47 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:23:47 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:23:47 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:23:47 [DEBUG] Script: entity1.lua
+11-11-2020 00:23:47 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:23:47 [DEBUG] Map::Load | object added
+11-11-2020 00:23:48 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:23:49 [INFO] Starting Engine...
+11-11-2020 00:23:49 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:23:49 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:23:49 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:23:49 [DEBUG] file: objects\entity1.json
+11-11-2020 00:23:49 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:23:49 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:23:49 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:23:49 [DEBUG] Script: entity1.lua
+11-11-2020 00:23:49 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:23:49 [DEBUG] Map::Load | object added
+11-11-2020 00:23:50 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:24:39 [INFO] Starting Engine...
+11-11-2020 00:24:39 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:24:39 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:24:39 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:24:39 [DEBUG] file: objects\entity1.json
+11-11-2020 00:24:39 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:24:39 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:24:39 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:24:39 [DEBUG] Script: entity1.lua
+11-11-2020 00:24:39 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:24:39 [DEBUG] ScriptManager::FindScript objects\entity1.json
+11-11-2020 00:24:39 [DEBUG] Map::Load | object added
+11-11-2020 00:24:39 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:25:23 [INFO] Starting Engine...
+11-11-2020 00:25:23 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:25:23 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:25:23 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:25:23 [DEBUG] file: objects\entity1.json
+11-11-2020 00:25:23 [DEBUG] ParseJsonFile objects\entity1.json
+11-11-2020 00:25:23 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:25:23 [DEBUG] ParseJsonFile maps/map1.json
+11-11-2020 00:25:23 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:25:23 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:25:23 [DEBUG] Script: entity1.lua
+11-11-2020 00:25:23 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:25:23 [DEBUG] ParseJsonFile objects\entity1.json
+11-11-2020 00:25:23 [DEBUG] Map::Load | object added
+11-11-2020 00:25:24 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:25:53 [INFO] Starting Engine...
+11-11-2020 00:25:53 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:25:53 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:25:53 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:25:53 [DEBUG] file: objects\entity1.json
+11-11-2020 00:25:53 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:25:53 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:25:53 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:25:53 [DEBUG] Script: entity1.lua
+11-11-2020 00:25:53 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:25:53 [DEBUG] if (ParseJsonFile(file, root))
+11-11-2020 00:25:53 [DEBUG] Map::Load | object added
+11-11-2020 00:25:53 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:26:15 [INFO] Starting Engine...
+11-11-2020 00:26:16 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:26:16 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:26:16 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:26:16 [DEBUG] file: objects\entity1.json
+11-11-2020 00:26:16 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:26:16 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:26:16 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:26:16 [DEBUG] Script: entity1.lua
+11-11-2020 00:26:16 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:26:16 [DEBUG] objName: ent
+11-11-2020 00:26:16 [DEBUG] Map::Load | object added
+11-11-2020 00:26:16 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:26:58 [INFO] Starting Engine...
+11-11-2020 00:26:58 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:26:58 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:26:58 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:26:58 [DEBUG] file: objects\entity1.json
+11-11-2020 00:26:58 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:26:58 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:26:58 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:26:58 [DEBUG] Script: entity1.lua
+11-11-2020 00:26:58 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:26:58 [DEBUG] objName: ent | entity1.lua
+11-11-2020 00:26:58 [DEBUG] Map::Load | object added
+11-11-2020 00:26:59 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:29:02 [INFO] Starting Engine...
+11-11-2020 00:29:02 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:29:02 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:29:02 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:29:02 [DEBUG] file: objects\entity1.json
+11-11-2020 00:29:02 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:29:02 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:29:02 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:29:02 [DEBUG] Script: entity1.lua
+11-11-2020 00:29:02 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:29:02 [DEBUG] if (objName.compare(name) == 0)
+11-11-2020 00:29:02 [INFO] filename entity1.lua
+11-11-2020 00:29:02 [INFO] test_str scripts\entity1.lua
+11-11-2020 00:29:02 [INFO] file scripts\entity1.lua
+11-11-2020 00:29:02 [INFO] filename 
+ent = {};
+
+ent.init = function()
+    print("init from LUA");
+    return true;
+end
+
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
+end
+
+ÿ
+11-11-2020 00:29:02 [INFO] test_str scripts\
+ent = {};
+
+ent.init = function()
+    print("init from LUA");
+    return true;
+end
+
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
+end
+
+ÿ
+11-11-2020 00:29:02 [INFO] file scripts\entity1.lua
+11-11-2020 00:29:02 [INFO] file scripts\keyboard.lua
+11-11-2020 00:29:02 [INFO] file scripts\player.lua
+11-11-2020 00:29:02 [DEBUG] Map::Load | object added
+11-11-2020 00:29:03 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:33:02 [INFO] Starting Engine...
+11-11-2020 00:33:02 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:33:02 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:33:02 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:33:02 [DEBUG] file: objects\entity1.json
+11-11-2020 00:33:02 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:33:02 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:33:02 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:33:02 [DEBUG] Script: entity1.lua
+11-11-2020 00:33:02 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:33:02 [DEBUG] if (objName.compare(name) == 0)
+11-11-2020 00:33:02 [INFO] filename entity1.lua
+11-11-2020 00:33:02 [INFO] test_str scripts\entity1.lua
+11-11-2020 00:33:02 [INFO] file scripts\entity1.lua
+11-11-2020 00:33:02 [INFO] filename 
+ent = {};
+
+ent.init = function()
+    print("init from LUA");
+    return true;
+end
+
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
+end
+
+ÿ
+11-11-2020 00:33:02 [INFO] test_str scripts\
+ent = {};
+
+ent.init = function()
+    print("init from LUA");
+    return true;
+end
+
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
+end
+
+ÿ
+11-11-2020 00:33:03 [INFO] file scripts\entity1.lua
+11-11-2020 00:33:03 [INFO] file scripts\keyboard.lua
+11-11-2020 00:33:03 [INFO] file scripts\player.lua
+11-11-2020 00:33:03 [DEBUG] Map::Load | object added
+11-11-2020 00:33:03 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:33:32 [INFO] Starting Engine...
+11-11-2020 00:33:32 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:33:32 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:33:32 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:33:32 [DEBUG] file: objects\entity1.json
+11-11-2020 00:33:32 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:33:32 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:33:32 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:33:32 [DEBUG] Script: entity1.lua
+11-11-2020 00:33:32 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:33:32 [DEBUG] Map::Load | object added
+11-11-2020 00:33:32 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:39:54 [INFO] Starting Engine...
+11-11-2020 00:39:54 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:39:54 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:39:54 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:39:54 [DEBUG] file: objects\entity1.json
+11-11-2020 00:39:54 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:39:54 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:41:16 [INFO] Starting Engine...
+11-11-2020 00:41:16 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:41:16 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:41:16 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:41:16 [DEBUG] file: objects\entity1.json
+11-11-2020 00:41:16 [DEBUG] GameObjectFactory::Initialize | ent:entity1.lua
+11-11-2020 00:41:16 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:41:16 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:42:00 [INFO] Starting Engine...
+11-11-2020 00:42:00 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:42:00 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:42:00 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:42:00 [DEBUG] file: objects\entity1.json
+11-11-2020 00:42:00 [DEBUG] GameObjectFactory::Initialize || ent:entity1.lua
+11-11-2020 00:42:00 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:42:00 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:44:07 [INFO] Starting Engine...
+11-11-2020 00:44:07 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:44:07 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:44:07 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:44:07 [DEBUG] file: objects\entity1.json
+11-11-2020 00:44:07 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:44:07 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:45:24 [INFO] Starting Engine...
+11-11-2020 00:45:24 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:45:24 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:45:24 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:45:24 [DEBUG] file: objects\entity1.json
+11-11-2020 00:45:24 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:45:24 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:46:04 [INFO] Starting Engine...
+11-11-2020 00:46:04 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:46:04 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:46:04 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:46:04 [DEBUG] file: objects\entity1.json
+11-11-2020 00:46:04 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:46:04 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:46:29 [INFO] Starting Engine...
+11-11-2020 00:46:29 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:46:29 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:46:29 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:46:29 [DEBUG] file: objects\entity1.json
+11-11-2020 00:46:29 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:46:29 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:46:29 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:46:29 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:46:29 [DEBUG] Script: entity1.lua
+11-11-2020 00:46:29 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:46:29 [DEBUG] Map::Load | object added
+11-11-2020 00:46:30 [INFO] ScriptManager::ExecuteMethod
+11-11-2020 00:48:15 [INFO] Starting Engine...
+11-11-2020 00:48:15 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:48:15 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:48:15 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:48:15 [DEBUG] file: objects\entity1.json
+11-11-2020 00:48:15 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:48:15 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:48:15 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:48:15 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:48:15 [DEBUG] Script: entity1.lua
+11-11-2020 00:48:15 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:48:15 [DEBUG] Map::Load | object added
+11-11-2020 00:49:18 [INFO] Starting Engine...
+11-11-2020 00:49:18 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:49:18 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:49:18 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:49:18 [DEBUG] file: objects\entity1.json
+11-11-2020 00:49:18 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:49:18 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:49:18 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:49:18 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:49:18 [DEBUG] Script: entity1.lua
+11-11-2020 00:49:18 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:49:18 [DEBUG] Map::Load | object added
+11-11-2020 00:51:05 [INFO] Starting Engine...
+11-11-2020 00:51:05 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:51:05 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:51:05 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:51:05 [DEBUG] file: objects\entity1.json
+11-11-2020 00:51:05 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:51:05 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:51:05 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:51:05 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:51:05 [DEBUG] Script: entity1.lua
+11-11-2020 00:51:05 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:51:05 [DEBUG] Map::Load | object added
+11-11-2020 00:51:58 [INFO] Starting Engine...
+11-11-2020 00:51:58 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:51:58 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:51:58 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:51:58 [DEBUG] file: objects\entity1.json
+11-11-2020 00:51:58 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:51:58 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:51:58 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:51:58 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:51:58 [DEBUG] Script: entity1.lua
+11-11-2020 00:51:58 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:51:58 [DEBUG] Map::Load | object added
+11-11-2020 00:52:47 [INFO] Starting Engine...
+11-11-2020 00:52:47 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:52:47 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:52:47 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:52:47 [DEBUG] file: objects\entity1.json
+11-11-2020 00:52:47 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:52:47 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:52:47 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:52:47 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:52:47 [DEBUG] Script: entity1.lua
+11-11-2020 00:52:47 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:52:47 [DEBUG] script_name: 
+ent = {};
+
+ent.init = function()
+    print("init from LUA");
+    return true;
+end
+
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
+end
+
+ÿ
+11-11-2020 00:52:47 [DEBUG] Map::Load | object added
+11-11-2020 00:53:06 [INFO] Starting Engine...
+11-11-2020 00:53:06 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:53:06 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:53:06 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:53:06 [DEBUG] file: objects\entity1.json
+11-11-2020 00:53:06 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:53:06 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:53:06 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:53:06 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:53:06 [DEBUG] Script: entity1.lua
+11-11-2020 00:53:06 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:53:06 [DEBUG] script_name: 
+ent = {};
+
+ent.init = function()
+    print("init from LUA");
+    return true;
+end
+
+ent.update = function()
+   -- print("update" .. tostring(time*2));
+   print("update");
+end
+
+ÿ
+11-11-2020 00:53:06 [DEBUG] Map::Load | object added
+11-11-2020 00:58:03 [INFO] Starting Engine...
+11-11-2020 00:58:03 [INFO] ScriptManager::Initialize | creating Lua state object
+11-11-2020 00:58:03 [INFO] ScriptManager::Initialize | DONE
+11-11-2020 00:58:03 [INFO] GameObjectFactory::Initialize()
+11-11-2020 00:58:03 [DEBUG] file: objects\entity1.json
+11-11-2020 00:58:03 [INFO] Map::Load | maps/map1.json
+11-11-2020 00:58:03 [INFO] Map::Load | Cells Loaded
+11-11-2020 00:58:03 [DEBUG] Map::Load | object [name] ent
+11-11-2020 00:58:03 [DEBUG] GameObjectFactory::Create | ent
+11-11-2020 00:58:03 [DEBUG] Script: entity1.lua
+11-11-2020 00:58:03 [DEBUG] ScriptManager::Load | entity1.lua
+11-11-2020 00:58:03 [DEBUG] Map::Load | object added

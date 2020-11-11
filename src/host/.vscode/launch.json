@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "g++.exe - Build and debug active file",
-            "type": "cppdbg",
+            "type":  "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\bin\\host.exe",
             "args": [],

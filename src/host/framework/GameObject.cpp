@@ -1,20 +1,34 @@
 #include "GameObject.h"
 
+#include "ServiceManager.h"
+#include "Logger.h"
+
 namespace Engine
 {
 
 GameObject::GameObject()
 {
+    _hasScript = false;
     _pos = sf::Vector2f(0.0, 0.0);
     _size = sf::Vector2f(0.0, 0.0);
 }
 
-void GameObject::Initialize()
+void GameObject::Initialize(void* services)
 {
+    _hasScript = !_script.empty();
+    _services = services;
 }
 
 void GameObject::Update(float time)
 {
+    if (_hasScript)
+    {        
+        std::string func = _name + ".update";
+        LogPerCount(func, 1000);
+        
+        auto serviceMgr = static_cast<ServiceManager*>(_services);
+        serviceMgr->getScriptMgr().ExecuteMethod(func);
+    }
 }
 
 void GameObject::Draw(float time)

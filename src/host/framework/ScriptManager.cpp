@@ -2,14 +2,17 @@
 
 #include "../lib/json/includes/json.h"
 
-
 #include "Logger.h"
 #include "Utils.h"
 #include "JsonUtils.h"
 
-
 namespace Engine
 {
+
+ScriptManager::ScriptManager()
+{
+    _isInitialized = false;
+}
 
 ScriptManager::~ScriptManager()
 {
@@ -19,28 +22,56 @@ ScriptManager::~ScriptManager()
     }
 }
 
+void ScriptManager::ExecuteMethod(std::string name)
+{
+    LogInfo("ScriptManager::ExecuteMethod");
+
+    lua_getglobal(_lua, name.c_str());
+    if (lua_isfunction(_lua, -1))
+    {
+        LogDebug("Executing function: " + name);
+        lua_pcall(_lua, 0, 0, 0);
+    }
+}
+
 void ScriptManager::Initialize()
 {
+    if (_isInitialized)
+    {
+        LogDebug("ScriptManager::Initalize called more than once");
+        return;
+    }
     LogInfo("ScriptManager::Initialize | creating Lua state object");
 
     _lua = luaL_newstate();
     luaL_openlibs(_lua);
 
+    _isInitialized = true;
+    
     LogInfo("ScriptManager::Initialize | DONE");
 }
 
 void ScriptManager::Load(std::string name)
 {
     LogDebug("ScriptManager::Load | " + name);
-    std::string script_name = this->FindScript(name);
-    if (!script_name.empty())
-    {
-        std::string json = this->GetScript(script_name);        
-            // LogInfo("Scripts loaded.");
+    // std::string script_name = this->FindScript(name);
+    // if (!script_name.empty())
+    // {
+    //     //std::string json = this->GetScript(script_name);
+    //     LogDebug("script_name: " + script_name);
+    //     // int err_result = luaL_dofile(_lua, script_name.c_str());
+    //     // if (err_result)
+    //     // {
+    //     //     auto err_str = lua_tostring(_lua, -1);
+    //     //     printf("LUA ERROR %s\n", err_str);
+    //     // }
+        
+    //         // LogInfo("Scripts loaded.");
 
-       // printf("json | %s\n", json.c_str());
-    //    _scripts.insert(name, json);
-    }
+    //    // printf("json | %s\n", json.c_str());
+    // //    _scripts.insert(name, json);
+    
+    // }
 
     // auto existing = _scripts.find(name);
     // if (existing == _scripts.end())
@@ -64,13 +95,14 @@ std::string ScriptManager::FindScript(std::string name)
         Json::Value root;
         if (ParseJsonFile(file, root))
         {
-            std::string objName = root.get("name", "").asString();
-            if (objName.compare(name) == 0)
+            std::string scriptName = root.get("script", "").asString();
+            if (scriptName.compare(name) == 0)
             {
-                std::string script = root.get("script", "").asString();
-                if (!script.empty())
+                //std::string script = root.get("script", "").asString();
+                //if (!script.empty())
                 {
-                    result = this->GetScript(script);
+                    result = this->GetScript(scriptName);
+                    break;
                 }
             }            
         }
@@ -82,21 +114,16 @@ std::string ScriptManager::FindScript(std::string name)
 std::string ScriptManager::GetScript(std::string filename)
 {
     std::string result;
-
-    LogInfo("filename " + filename);
-
     std::string test_str = "scripts\\" + filename;
-
-    LogInfo("test_str " + test_str);
 
     // get all files from script folder
     auto files = GetFiles("scripts");
     for (std::string file : files)
     {
-        LogInfo("file " + file);
         if (file.compare(test_str) == 0)
         {            
             result = ReadFromFile(file);
+            break;
         }
     }
 
