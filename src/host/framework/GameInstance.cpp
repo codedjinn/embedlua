@@ -18,17 +18,17 @@ GameInstance::GameInstance()
     _name = "GameInstance";
 }
 
-void GameInstance::Initialize(ServiceManager* services)
-{
-    _services = services;
-}
+// void GameInstance::Initialize(ServiceManager* services)
+// {
+//     _services = services;
+// }
 
 void GameInstance::Demo()
 {   
     // GameObject* obj = new GameObject();
     // obj->Initialize();
     // _objects.push_back(obj);
-    _map = new Map(_services);
+    _map = new Map();
     _map->Load(std::string("maps/map1.json"));
 
     auto pstart = _map->getPlayerStart();

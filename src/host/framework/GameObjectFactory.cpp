@@ -107,4 +107,16 @@ GameObject* GameObjectFactory::Create(std::string name)
 //     LogInfo("[GameObjectFactory]<Initialize> Exit");
 // }
 
+
+GameObjectFactory* GameObjectFactory::_instance = nullptr;
+GameObjectFactory& GameObjectFactory::instance()
+{
+    if (GameObjectFactory::_instance == nullptr)
+    {
+        GameObjectFactory::_instance = new GameObjectFactory();
+    }
+    return *GameObjectFactory::_instance;
+}
+
+
 }

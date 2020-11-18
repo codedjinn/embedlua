@@ -5,12 +5,14 @@
 #include "Logger.h"
 #include "JsonUtils.h"
 
+#include "GameObjectFactory.h"
+#include "ScriptManager.h"
+
 namespace Engine
 {
 
-    Map::Map(ServiceManager *services)
+    Map::Map()
     {
-        _services = services;
     }
 
     void Map::Build()
@@ -88,8 +90,8 @@ void Map::Load(const std::string filename)
 
 void Map::LoadObjects(Json::Value root)
 {
-    auto scriptMgr = _services->getScriptMgr();
-    auto objFactory = _services->getObjectFactory();
+    auto scriptMgr = ScriptManager::instance();
+    auto objFactory = GameObjectFactory::instance();
 
     const Json::Value objects = root["objects"];
     for (int i = 0; i < objects.size(); i++)
@@ -101,7 +103,6 @@ void Map::LoadObjects(Json::Value root)
         if (!name.empty())
         {
             GameObject* obj = objFactory.Create(name);
-            obj->Initialize(_services);
 
             // let script manager handle the script
             if (!obj->getScript().empty())
@@ -179,7 +180,7 @@ void Map::Update(float time)
 {
     for (auto obj : _objects)
     {
-      //  obj->Update(time);
+        obj->Update(time);
     }
 }
 

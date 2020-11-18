@@ -15,13 +15,15 @@ class GameObjectFactory
         Lookup _objects;
         bool _isInitialized;
 
+        static GameObjectFactory* _instance;
+
     public:
 
         void Initialize();
 
         GameObject* Create(std::string name);
 
-        static GameObjectFactory& get();
+        static GameObjectFactory& instance();
 };
 
 }

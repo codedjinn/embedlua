@@ -1,4 +1,3 @@
-
 ent = {};
 
 ent.init = function()
@@ -7,7 +6,12 @@ ent.init = function()
 end
 
 ent.update = function()
-   -- print("update" .. tostring(time*2));
-   print("update");
+   --print("update " .. tostring(time*2));
+   print("update with no arg");
 end
 
+function update()
+    print("ffs");
+end
+
+--print("COME ON MAN");

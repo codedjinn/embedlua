@@ -22,18 +22,7 @@ ScriptManager::~ScriptManager()
     }
 }
 
-void ScriptManager::ExecuteMethod(std::string name)
-{
-    LogInfo("ScriptManager::ExecuteMethod");
-
-    lua_getglobal(_lua, name.c_str());
-    if (lua_isfunction(_lua, -1))
-    {
-        LogDebug("Executing function: " + name);
-        lua_pcall(_lua, 0, 0, 0);
-    }
-}
-
+//  
 void ScriptManager::Initialize()
 {
     if (_isInitialized)
@@ -53,81 +42,179 @@ void ScriptManager::Initialize()
 
 void ScriptManager::Load(std::string name)
 {
-    LogDebug("ScriptManager::Load | " + name);
-    // std::string script_name = this->FindScript(name);
-    // if (!script_name.empty())
-    // {
-    //     //std::string json = this->GetScript(script_name);
-    //     LogDebug("script_name: " + script_name);
-    //     // int err_result = luaL_dofile(_lua, script_name.c_str());
-    //     // if (err_result)
-    //     // {
-    //     //     auto err_str = lua_tostring(_lua, -1);
-    //     //     printf("LUA ERROR %s\n", err_str);
-    //     // }
-        
-    //         // LogInfo("Scripts loaded.");
+    LogDebug("<ScriptManager::Load> " + name);
 
-    //    // printf("json | %s\n", json.c_str());
-    // //    _scripts.insert(name, json);
-    
-    // }
+    std::string fullpath = "scripts/" + name;
+    int err_result = luaL_dofile(_lua, fullpath.c_str());
+    if (err_result)
+    {
+        auto err_str = lua_tostring(_lua, -1);
+        lua_pop(_lua, 1);
+        LogError("Error loading LUA script. Reason - " + std::string(err_str));
+        return;
+    }
+    else
+    {
+        LogDebug("<ScriptManager::Load> Loaded");
+    }
 
-    // auto existing = _scripts.find(name);
-    // if (existing == _scripts.end())
-    // {
-    //     std::string script_name = this->FindScript(name);
-    //     if (!script_name.empty())
+ //   lua_pop(_lua, -1);
+    // lua_getglobal(_lua, "ent");
+    // lua_getfield(_lua, -1, "update");
+    // if (lua_isfunction(_lua, -1))
+    // {        
+    //     lua_pushinteger(_lua, 10);
+    //     auto err_result = lua_pcall(_lua, 1, 0, 0);
+
+    //     if (err_result)
     //     {
-    //         std::string json = this->GetScript(script_name);
-    //         _scripts.insert(name, json);
+    //         auto err_str = lua_tostring(_lua, -1);
+    //         LogError("Error executing function. Reason - " + std::string(err_str));
     //     }
+
+    // }
+    // else if (lua_istable(_lua, -1))
+    // {
+    //     LogDebug("ITS A TABLE!");
+    // }
+    // else
+    // {
+    //     LogDebug("DON'T KNOW!");
+    // }
+    
+}
+
+void ScriptManager::ExecuteTableMethod(const char* tableName, const char* methodName)
+{
+    LogDebug("ScriptManager::ExecuteTableMethod " + std::string(tableName) + "." + std::string(methodName));
+
+    lua_State* lua = luaL_newstate();
+
+    luaL_dofile(lua, "scripts/entity1.lua");
+
+    // int err_result = luaL_dofile(lua, "scripts/entity1.lua");
+    // if (err_result)
+    // {
+    //     auto err_str = lua_tostring(lua, -1);
+    //     lua_pop(lua, 1);
+    //     LogError("Error loading LUA script. Reason - " + std::string(err_str));
+    //     return;
+    // }
+
+    // err_result = lua_getglobal(lua, tableName);
+    // if (err_result)
+    // {
+    //     auto err_str = lua_tostring(lua, -1);
+    //     LogDebug("Error executing method. Reason - " + std::string(err_str));
+    //     lua_pop(lua, -1);
+    //     return;
+    // }
+    
+    // if (lua_istable(lua, -1))
+    // {
+    //     LogDebug("istable");
+
+    //     lua_getfield(lua, -1, methodName);
+    //     if (lua_isfunction(lua, -1))
+    //     {
+    //         LogDebug("isfunction");
+    //         auto err_result = lua_pcall(lua, 0, 0, 0);
+    //         if (err_result)
+    //         {
+    //             auto err_str = lua_tostring(lua, -1);
+    //             LogError("Error executing function " + std::string(err_str));
+    //         }
+    //     }
+    //     else
+    //     {
+    //         LogDebug("Did not find function on table, " + std::string(methodName));
+    //     }
+        
+    // }
+    // else
+    // {
+    //     LogDebug("Expected table " + std::string(tableName));
     // }
 }
 
-std::string ScriptManager::FindScript(std::string name)
+void ScriptManager::ExecuteTableMethod(const char* tableName, const char* methodName, std::vector<void*> &inputs)
 {
-    std::string result;
-
-    auto files = GetFiles("objects");
-    for (std::string file : files)
+    lua_getglobal(_lua, tableName);
+    if (lua_istable(_lua, -1))
     {
-        Json::Value root;
-        if (ParseJsonFile(file, root))
+        lua_getfield(_lua, -1, methodName);
+        if (lua_isfunction(_lua, -1))
         {
-            std::string scriptName = root.get("script", "").asString();
-            if (scriptName.compare(name) == 0)
-            {
-                //std::string script = root.get("script", "").asString();
-                //if (!script.empty())
-                {
-                    result = this->GetScript(scriptName);
-                    break;
-                }
-            }            
+            
         }
+        else
+        {
+            LogDebug("Did not find function on table, " + std::string(methodName));
+        }
+        
     }
-
-    return result;
+    else
+    {
+        LogDebug("Expected table " + std::string(tableName));
+    }
 }
 
-std::string ScriptManager::GetScript(std::string filename)
+// std::string ScriptManager::FindScript(std::string name)
+// {
+//     std::string result;
+
+//     auto files = GetFiles("objects");
+//     for (std::string file : files)
+//     {
+//         Json::Value root;
+//         if (ParseJsonFile(file, root))
+//         {
+//             std::string scriptName = root.get("script", "").asString();
+//             if (scriptName.compare(name) == 0)
+//             {
+//                 //std::string script = root.get("script", "").asString();
+//                 //if (!script.empty())
+//                 {
+//                     result = this->GetScript(scriptName);
+//                     break;
+//                 }
+//             }            
+//         }
+//     }
+
+//     return result;
+// }
+
+// std::string ScriptManager::GetScript(std::string filename)
+// {
+//     std::string result;
+//     std::string test_str = "scripts\\" + filename;
+
+//     // get all files from script folder
+//     auto files = GetFiles("scripts");
+//     for (std::string file : files)
+//     {
+//         if (file.compare(test_str) == 0)
+//         {            
+//             result = ReadFromFile(file);
+//             break;
+//         }
+//     }
+
+//     return result;
+// }
+
+
+
+ScriptManager* ScriptManager::_instance = nullptr;
+ScriptManager& ScriptManager::instance()
 {
-    std::string result;
-    std::string test_str = "scripts\\" + filename;
-
-    // get all files from script folder
-    auto files = GetFiles("scripts");
-    for (std::string file : files)
+    if (ScriptManager::_instance == nullptr)
     {
-        if (file.compare(test_str) == 0)
-        {            
-            result = ReadFromFile(file);
-            break;
-        }
+        LogDebug("ScriptManager CREATED");
+        ScriptManager::_instance = new ScriptManager();
     }
-
-    return result;
+    return *ScriptManager::_instance;
 }
 
 }

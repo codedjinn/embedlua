@@ -8,8 +8,6 @@
 #include <SFML/Graphics.hpp>
 #include "MapCell.h"
 
-#include "ServiceManager.h"
-
 #include "GameObject.h"
 
 namespace Engine
@@ -39,8 +37,6 @@ class Map
 
         std::vector<GameObject*> _objects;
 
-        ServiceManager* _services;
-
         void Build();
 
         void LoadCells(Json::Value root);
@@ -50,7 +46,7 @@ class Map
 
         const float TileSize = 20.0f;
 
-        Map(ServiceManager* services);
+        Map();
 
         void Load(const std::string filename);
 

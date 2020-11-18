@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "../lib/lua/include/lua.hpp"
 
@@ -15,12 +16,14 @@ class ScriptManager
 {
     private:
 
+        static ScriptManager* _instance;
+
         bool _isInitialized;
 
         lua_State* _lua;
 
-        std::string FindScript(std::string name);
-        std::string GetScript(std::string filename);
+        // std::string FindScript(std::string name);
+        // std::string GetScript(std::string filename);
 
     public:
 
@@ -32,8 +35,21 @@ class ScriptManager
 
         void Load(std::string name);
 
-        void ExecuteMethod(std::string name);
+        void ExecuteTableMethod(const char* tableName, 
+                                const char* methodName);
+
+        void ExecuteTableMethod(const char* tableName, 
+                                const char* methodName,
+                                std::vector<void*> &inputs);                                
+
+        void ExecuteTableMethod(const char* tableName, 
+                                const char* methodName,
+                                std::vector<void*> &inputs,
+                                std::vector<void*> &returns);
+
+        static ScriptManager& instance();
         
 };
+
 
 }

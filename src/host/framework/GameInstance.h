@@ -8,8 +8,6 @@
 #include "Player.h"
 #include "GameObject.h"
 
-#include "ServiceManager.h"
-
 namespace Engine
 {
 
@@ -28,17 +26,12 @@ class GameInstance
         Player* _player;
         std::vector<GameObject*> _objects;
 
-        ServiceManager* _services;
-
     public:
 
         GameInstance();
 
-        void Initialize(ServiceManager* services);
-
         void Demo();
 
-        //void Run();
 
         void Update(float time);
         void Draw(float time, sf::RenderWindow& renderer);

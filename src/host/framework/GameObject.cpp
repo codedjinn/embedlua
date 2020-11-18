@@ -1,7 +1,7 @@
 #include "GameObject.h"
 
-#include "ServiceManager.h"
 #include "Logger.h"
+#include "ScriptManager.h"
 
 namespace Engine
 {
@@ -13,21 +13,22 @@ GameObject::GameObject()
     _size = sf::Vector2f(0.0, 0.0);
 }
 
-void GameObject::Initialize(void* services)
-{
-    _hasScript = !_script.empty();
-    _services = services;
-}
-
+bool once = true;
 void GameObject::Update(float time)
 {
     if (_hasScript)
     {        
-        std::string func = _name + ".update";
-        LogPerCount(func, 1000);
+        LogPerCount("update from gameobject", 1000);
         
-        auto serviceMgr = static_cast<ServiceManager*>(_services);
-        serviceMgr->getScriptMgr().ExecuteMethod(func);
+        if (once)
+        {
+            once = false;
+            ScriptManager& scriptMgr = ScriptManager::instance();
+            scriptMgr.ExecuteTableMethod(_name.c_str(), "update");
+        }
+        // auto serviceMgr = static_cast<ServiceManager*>(_services);
+        // serviceMgr->getScriptMgr().ExecuteTableMethod(_name.c_str(), "update");
+        //serviceMgr->getScriptMgr().ExecuteMethod(func);
     }
 }
 
@@ -47,8 +48,11 @@ void GameObject::setPos(sf::Vector2f value)
 std::string GameObject::getName() { return _name; }
 void GameObject::setName(std::string value) { _name = value; }
 
-
 std::string GameObject::getScript() { return _script; }
-void GameObject::setScript(std::string value) { _script = value; }
+void GameObject::setScript(std::string value) 
+{ 
+    _script = value; 
+    _hasScript = true;
+}
 
 }

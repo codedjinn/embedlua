@@ -4,6 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 
+
 namespace Engine
 {
 
@@ -34,9 +35,7 @@ class GameObject
     public:
 
         GameObject();
-        //GameObject(GameObject&& ref) {}
 
-        void Initialize(void* services);
         void Update(float time);
         void Draw(float time);
 
