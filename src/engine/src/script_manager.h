@@ -7,7 +7,8 @@
 #include "../lib/lua/include/lua.hpp"
 
 #include "logger.h"
-#include "method_input_builder.h"
+#include "lua_value.h"
+#include "lua_method.h"
 
 class ScriptManager
 {
@@ -26,9 +27,15 @@ public:
     // NOTE: Non-recursive for now.
     void Initialize();
 
+    // DEBUG, shouldn't be in final release
     void Load(std::string filename);
 
+    // TODO: refactor methods to re-use same code
+    
     void ExecuteTableMethod(std::string tableName, std::string methodName);
-    void ExecuteTableMethod(std::string tableName, std::string methodName, MethodInputBuilder builder);
+    void ExecuteTableMethod(std::string tableName, std::string methodName, LuaMethodInputs inputs);
+    LuaValue ExecuteTableMethod(std::string tableName, std::string methodName, LuaMethodInputs inputs, DataType returnType);
+
+   // void ExecuteTableMethodReturns(std::string tableName, std::string methodName, MethodParams returns);
 
 };

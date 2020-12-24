@@ -1,5 +1,8 @@
 SFML2
 build
+bin/
+bin
+bin/*
 .vscode
 .vs
 
@@ -81,3 +84,4 @@ edit-git-bash.exe
 !/archive/root/etc/protocols
 !/archive/root/etc/services
 /versions/cached-files/
+

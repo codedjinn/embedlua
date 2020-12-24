@@ -16,7 +16,8 @@ set(
     src/util.h
     src/logger.h
     src/logger.cpp
-    src/method_input_builder.h
+    src/lua_value.h
+    src/lua_method.h
     src/script_manager.h
     src/script_manager.cpp
     src/entity.h
