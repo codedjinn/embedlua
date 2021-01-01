@@ -1,21 +1,63 @@
 
 #include "script_manager.h"
 
+#include <algorithm>
+
+#include "util.h"
+
+const char* System_Script_File = "scripts\\system.lua";
+
+std::vector<std::string> System_Scripts;
+
+void ScriptManager::InitializeSystem()
+{
+    System_Scripts.push_back(std::string(System_Script_File));
+
+    // if this file isn't available, game should fail
+    this->Load(System_Script_File);
+}
+
 void ScriptManager::Initialize()
 {
     _lua = luaL_newstate();
-    luaL_openlibs(_lua);    
+    luaL_openlibs(_lua);  
+
+    this->InitializeSystem();
+
+    auto files = GetFiles("scripts");
+    for (auto& file : files)
+    {
+        // skip reserved files
+        auto result = std::find(System_Scripts.begin(), System_Scripts.end(), file);
+        if (result != System_Scripts.end())
+        {
+            std::string msg = "Skipped system file, '";
+            msg.append(file);
+            msg.append("'");
+            LogDebug(msg);
+            continue;
+        }
+        this->Load(file);
+    }
 }
 
 void ScriptManager::Load(std::string filename)
 {
+    LogInfo("Loading script and executing, " + filename);
     int result = luaL_loadfile(_lua, filename.c_str());
     if (result || lua_pcall(_lua, 0, 0, 0))
     {
-        std::string errMsg = "Failed to load script, " + filename + ", reason - " + lua_tostring(_lua, -1);
+        std::string errMsg = "Failed to load script, '";
+        errMsg.append(filename);
+        errMsg.append("', reason: ");
+        errMsg.append(lua_tostring(_lua, -1));
         LogError(errMsg);
         lua_pop(_lua, 1);
     }
+    else
+    {
+        LogInfo("SUCCESS");
+    }    
 }
 
 void ScriptManager::ExecuteTableMethod(std::string tableName, std::string methodName)
@@ -28,7 +70,12 @@ void ScriptManager::ExecuteTableMethod(std::string tableName, std::string method
         {
             if (lua_pcall(_lua, 0, 0, 0))
             {
-                std::string errMsg = "Coudln't execute" + tableName + "::" + methodName + ", reason - " + lua_tostring(_lua, -1);
+                std::string errMsg = "Coudln't execute";
+                errMsg.append(tableName);
+                errMsg.append("::");
+                errMsg.append(methodName);
+                errMsg.append(", reason - ");
+                errMsg.append(lua_tostring(_lua, -1));
                 LogError(errMsg);
             }
             lua_pop(_lua, 1);
@@ -36,7 +83,11 @@ void ScriptManager::ExecuteTableMethod(std::string tableName, std::string method
     }
     else
     {
-        LogDebug("Unknown error! " + tableName + "::" + methodName);
+        std::string msg = "Unknown error! ";
+        msg.append(tableName);
+        msg.append("::");
+        msg.append(methodName);
+        LogDebug(msg);
     }
 }
 
@@ -70,19 +121,32 @@ void ScriptManager::ExecuteTableMethod(std::string tableName, std::string method
             int result = lua_pcall(_lua, inputs.getCount(), 0, 0);
             if (result)
             {
-                std::string errMsg = "Error executing method " + tableName + "::" +  methodName + ". Reason: " + lua_tostring(_lua, -1);
+                std::string errMsg = "Coudln't execute";
+                errMsg.append(tableName);
+                errMsg.append("::");
+                errMsg.append(methodName);
+                errMsg.append(", reason - ");
+                errMsg.append(lua_tostring(_lua, -1));
                 LogError(errMsg);
             }
             lua_pop(_lua, 1);
         }
         else
         {
-            LogDebug("methodName does not exist, " + tableName + "::" + methodName);
+            std::string msg = "methodName does not exist, ";
+            msg.append(tableName);
+            msg.append("::");
+            msg.append(methodName);
+            LogDebug(msg);
         }
     }
     else
     {
-        LogDebug("Unknown error. " + tableName + "::" + methodName);
+        std::string msg = "Unknown error! ";
+        msg.append(tableName);
+        msg.append("::");
+        msg.append(methodName);
+        LogDebug(msg);
     }
 }
 
@@ -91,7 +155,7 @@ LuaValue ScriptManager::ExecuteTableMethod(std::string tableName, std::string me
 {
     LuaValue output;
 
-    // assume we won't be resolving a value
+    // we haven't resolved the value yet
     output.type = DataType::noval;
 
     lua_getglobal(_lua, tableName.c_str());
@@ -122,7 +186,12 @@ LuaValue ScriptManager::ExecuteTableMethod(std::string tableName, std::string me
             int result = lua_pcall(_lua, inputs.getCount(), 1, 0);
             if (result)
             {
-                std::string errMsg = "Error executing method " + tableName + "::" +  methodName + ". Reason: " + lua_tostring(_lua, -1);
+                std::string errMsg = "Error executing method ";
+                errMsg.append(tableName);
+                errMsg.append("::");
+                errMsg.append(methodName);
+                errMsg.append(". Reason: ");
+                errMsg.append(lua_tostring(_lua, -1));
                 LogError(errMsg);
             }
 
@@ -149,19 +218,28 @@ LuaValue ScriptManager::ExecuteTableMethod(std::string tableName, std::string me
             }
             else
             {
-                std::string err = "Error executing method " + std::string(lua_tostring(_lua, -1));
+                std::string err = "Error executing method ";
+                err.append(lua_tostring(_lua, -1));
                 LogError(err);
             }
             lua_pop(_lua, 1);
         }
         else
         {
-            LogDebug("methodName does not exist, " + tableName + "::" + methodName);
+            std::string msg = "methodName does not exist, ";
+            msg.append(tableName);
+            msg.append("::");
+            msg.append(methodName);
+            LogDebug(msg);
         }        
     }
     else
     {
-        LogDebug("Unknown error." + tableName + "::" + methodName);
+        std::string msg = "Unknown error.";
+        msg.append(tableName);
+        msg.append("::");
+        msg.append(methodName);
+        LogDebug(msg);
     }
     return output;
 }

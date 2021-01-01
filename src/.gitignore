@@ -1,4 +1,11 @@
 SFML2
+build
+bin/
+bin
+bin/*
+.vscode
+.vs
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -12,6 +19,8 @@ SFML2
 *.pdb
 *.sig
 *.swp
+*.exe
+*.log
 /ReleaseNotes.html
 edit-git-bash.exe
 /cached-source-packages/
@@ -77,3 +86,4 @@ edit-git-bash.exe
 !/archive/root/etc/protocols
 !/archive/root/etc/services
 /versions/cached-files/
+

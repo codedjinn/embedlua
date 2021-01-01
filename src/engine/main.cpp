@@ -3,24 +3,49 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "src/util.h"
+
 #include "src/script_manager.h"
+
+#include "src/entity_manager.h"
 
 int main()
 {
-    ScriptManager mgr;
-    mgr.Initialize();
-    mgr.Load("entity1.lua");
-    mgr.ExecuteTableMethod("ent", "update");
+    try
+    {
+        ScriptManager mgr;
+        mgr.Initialize();   
 
-    LuaMethodInputs inputs;
-    inputs.AddNumber(10.0);
-    inputs.AddString("pew pew pew");
+        EntityManager entMgr;
+        entMgr.Initialize();
 
-    mgr.ExecuteTableMethod("ent", "foo", inputs);
+        auto entity = entMgr.CreateEntity("basic");
+        auto entity1 = entMgr.CreateEntity("basic");
+        auto entity2 = entMgr.CreateEntity("basic");
+        auto entity3 = entMgr.CreateEntity("basic");
 
-    LuaValue result = mgr.ExecuteTableMethod("ent", "res", LuaMethodInputs(), DataType::number);
+    }
+    catch(const std::exception& e)
+    {
+        LogError(std::string("!!CRITICAL!!") + std::string(e.what()));
+    }
+    catch (...)
+    {
+        LogError("!!CRITICAL!! No Reason");
+    }
 
-    printf("Result from script %f2.0, \n", result.numValue);
+    // mgr.ExecuteTableMethod("ent", "update");
+
+    // LuaMethodInputs inputs;
+    // inputs.AddNumber(10.0);
+    // inputs.AddString("I am no CHUMP!");
+
+    // mgr.ExecuteTableMethod("ent", "foo", inputs);
+
+    // // need to figure out int and double handling from LUA
+    // LuaValue result = mgr.ExecuteTableMethod("ent", "res", LuaMethodInputs(), DataType::number);
+
+    // printf("Result from script %f2.0, \n", result.numValue);
 
     return 0;
 }

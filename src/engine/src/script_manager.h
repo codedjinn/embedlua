@@ -18,6 +18,9 @@ private:
     bool _isInitialized;
 
     lua_State* _lua;
+    
+    // loads all built-in lua scripts and binds to them
+    void InitializeSystem();
 
 public:
 
@@ -35,7 +38,5 @@ public:
     void ExecuteTableMethod(std::string tableName, std::string methodName);
     void ExecuteTableMethod(std::string tableName, std::string methodName, LuaMethodInputs inputs);
     LuaValue ExecuteTableMethod(std::string tableName, std::string methodName, LuaMethodInputs inputs, DataType returnType);
-
-   // void ExecuteTableMethodReturns(std::string tableName, std::string methodName, MethodParams returns);
 
 };
