@@ -61,6 +61,8 @@ std::pair<bool, const Entity&> EntityManager::CreateEntity(std::string name)
     int id = _idCounter++;
     Entity* newEntity = new Entity();
     newEntity->setId(id);
+    newEntity->setScript(model.script);
+    newEntity->setName(model.name);
 
     // dumb but ok for now
     if (_idCounter > 20480)
@@ -75,3 +77,14 @@ std::pair<bool, const Entity&> EntityManager::CreateEntity(std::string name)
     return std::pair<bool, const Entity&>(false, *newEntity);
 }
 
+
+void EntityManager::Update(float time)
+{
+    for (auto& pair : _entities)
+    {
+        Entity& ent = *pair.second;
+        
+        
+    }
+    
+}

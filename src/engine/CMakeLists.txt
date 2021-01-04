@@ -26,6 +26,9 @@ set(
     src/entity.h
     src/entity_manager.h
     src/entity_manager.cpp
+    src/service_base.h
+    src/services.h
+    src/services.cpp
     main.cpp
 )
 

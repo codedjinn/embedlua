@@ -18,7 +18,7 @@ private:
     bool _isInitialized;
 
     lua_State* _lua;
-    
+
     // loads all built-in lua scripts and binds to them
     void InitializeSystem();
 

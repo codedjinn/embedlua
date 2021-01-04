@@ -12,10 +12,12 @@
 
 #include "util.h"
 
+#include "service_base.h"
+
 #include "entity_model.h"
 #include "entity.h"
 
-class EntityManager
+class EntityManager : public ServiceBase
 {
 
 public:
@@ -28,7 +30,10 @@ public:
     // try and change to reference or value type later
     std::pair<bool, const Entity&> CreateEntity(std::string name);
 
-    void Initialize();
+    void Initialize() override;
+    void Update(float time) override;
+
+    int getId() override { return 0; }
 
 private:
 
@@ -38,5 +43,4 @@ private:
 
     std::unordered_map<int, Entity*> _entities;
     std::vector<EntityModel> _entityDefinitions;
-
 };

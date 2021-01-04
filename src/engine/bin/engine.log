@@ -92,3 +92,27 @@
 31-12-2020 00:13:53 [INFO] Loading script and executing, scripts\entity1.lua
 31-12-2020 00:13:53 [INFO] SUCCESS
 31-12-2020 00:13:53 [DEBUG] Skipped system file, 'scripts\system.lua'
+31-12-2020 23:47:44 [INFO] Loading script and executing, scripts\system.lua
+31-12-2020 23:47:44 [INFO] SUCCESS
+31-12-2020 23:47:44 [INFO] Loading script and executing, scripts\entity1.lua
+31-12-2020 23:47:44 [INFO] SUCCESS
+31-12-2020 23:47:44 [DEBUG] Skipped system file, 'scripts\system.lua'
+01-01-2021 00:19:47 [INFO] Loading script and executing, scripts\system.lua
+01-01-2021 00:19:48 [INFO] SUCCESS
+01-01-2021 00:19:48 [INFO] Loading script and executing, scripts\entity1.lua
+01-01-2021 00:19:48 [INFO] SUCCESS
+01-01-2021 00:19:48 [DEBUG] Skipped system file, 'scripts\system.lua'
+01-01-2021 00:25:24 [INFO] Loading script and executing, scripts\system.lua
+01-01-2021 00:25:24 [INFO] SUCCESS
+01-01-2021 00:25:24 [INFO] Loading script and executing, scripts\entity1.lua
+01-01-2021 00:25:24 [INFO] SUCCESS
+01-01-2021 00:25:24 [DEBUG] Skipped system file, 'scripts\system.lua'
+01-01-2021 00:31:28 [INFO] Loading script and executing, scripts\system.lua
+01-01-2021 00:31:28 [INFO] SUCCESS
+01-01-2021 00:31:28 [INFO] Loading script and executing, scripts\entity1.lua
+01-01-2021 00:31:28 [INFO] SUCCESS
+01-01-2021 00:31:28 [DEBUG] Skipped system file, 'scripts\system.lua'
+04-01-2021 13:27:09 [ERROR] Service with id '0' already added
+04-01-2021 13:29:00 [ERROR] Service with id '0' already added
+04-01-2021 13:29:01 [DEBUG] Deleting services...
+04-01-2021 13:29:01 [DEBUG] DONE
