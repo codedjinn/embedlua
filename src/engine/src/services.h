@@ -15,6 +15,14 @@ enum class ServiceType
 // GetService needs rework, couldn't get it to work with templating like I wanted to
 //
 
+class DefaultService : public ServiceBase
+{
+public:
+    void Initialize() override { }
+    void Update(float time) override { }
+    const int getId() override { return -1; }
+};
+
 class Services
 {
     
@@ -34,6 +42,8 @@ public:
     void* GetService(ServiceType type);
 
 private:
+
+    DefaultService* _default;
 
     std::unordered_map<int, ServiceBase*> _services;
 

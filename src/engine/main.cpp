@@ -9,6 +9,18 @@
 #include "src/logger.h"
 #include "src/services.h"
 #include "src/entity_manager.h"
+#include "src/script_manager.h"
+
+int log(lua_State* lua)
+{
+    if (!lua_isstring(lua, 1))
+    {
+        assert("NO!");
+    }
+    std::string msg = lua_tostring(lua, 1);
+    LogInfo(msg);
+    return 0;
+}
 
 int main()
 {
@@ -22,9 +34,18 @@ int main()
 
         Services services;
         services.Add(new EntityManager());
+
+        auto mgr = new ScriptManager();
+        mgr->LinkMethod("log_info", ScriptManager::test);
+
+        services.Add(mgr);
         services.Initialize();
 
-        auto entMgr = (EntityManager*)services.GetService(ServiceType::Entity);
+        mgr->LoadScripts();
+
+        auto service = (EntityManager*)services.GetService(ServiceType::Entity);
+
+        //auto entMgr = services.GetService<EntityManager>(ServiceType::Entity);
         //services.Add(nullptr);
 
       //  services.getEntities().CreateEntity("basic");

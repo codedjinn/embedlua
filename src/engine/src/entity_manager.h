@@ -33,7 +33,7 @@ public:
     void Initialize() override;
     void Update(float time) override;
 
-    int getId() override { return 0; }
+    const int getId() override { return 0; }
 
 private:
 

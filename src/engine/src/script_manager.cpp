@@ -9,7 +9,20 @@ const char* System_Script_File = "scripts\\system.lua";
 
 std::vector<std::string> System_Scripts;
 
-void ScriptManager::InitializeSystem()
+
+void ScriptManager::Initialize()
+{
+    _lua = luaL_newstate();
+    luaL_openlibs(_lua);
+
+    for (auto& item : _linkedMethods)
+    {
+        lua_pushcfunction(_lua, item.second);
+        lua_setglobal(_lua, item.first.c_str());
+    }
+}
+
+void ScriptManager::LoadSystemScripts()
 {
     System_Scripts.push_back(std::string(System_Script_File));
 
@@ -17,12 +30,9 @@ void ScriptManager::InitializeSystem()
     this->Load(System_Script_File);
 }
 
-void ScriptManager::Initialize()
+void ScriptManager::LoadScripts()
 {
-    _lua = luaL_newstate();
-    luaL_openlibs(_lua);  
-
-    this->InitializeSystem();
+    this->LoadSystemScripts();
 
     auto files = GetFiles("scripts");
     for (auto& file : files)
@@ -242,6 +252,11 @@ LuaValue ScriptManager::ExecuteTableMethod(std::string tableName, std::string me
         LogDebug(msg);
     }
     return output;
+}
+
+void ScriptManager::LinkMethod(std::string name, lua_CFunction funcPtr)
+{
+    _linkedMethods.insert(std::pair<std::string,lua_CFunction>(name, funcPtr));
 }
 
 ScriptManager::~ScriptManager()

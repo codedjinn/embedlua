@@ -7,7 +7,7 @@ public:
 
     // will make lookup easier, we control whole engine so 
     // its every service's job to ensure id doesn't clash!
-    virtual int getId() = 0;
+    virtual const int getId() = 0;
 
     virtual void Initialize() = 0;
 

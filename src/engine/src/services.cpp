@@ -37,6 +37,7 @@ void Services::Add(ServiceBase* service)
 
 void Services::Initialize()
 {
+    _default = new DefaultService();
     for (auto& service : _services)
     {
         service.second->Initialize();
@@ -51,14 +52,13 @@ void Services::Update(float time)
     }
 }
 
+
 void* Services::GetService(ServiceType type)
 {
-    for (auto& service : _services)
+    auto it = _services.find((int)type);
+    if (it != _services.end())
     {
-        if (service.first == (int)type)
-        {
-            return (void*)service.second;
-        }
+        return it->second;
     }
     return nullptr;
 }
