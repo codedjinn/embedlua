@@ -38,6 +38,8 @@ public:
 
     const int getId() override { return 1; }
 
+    lua_State* getLuaState() { return _lua; }
+
     int test(lua_State* lua)
     {
         printf("testing!!");

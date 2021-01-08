@@ -10,6 +10,7 @@
 #include "src/services.h"
 #include "src/entity_manager.h"
 #include "src/script_manager.h"
+#include "src/method_bindings.h"
 
 int log(lua_State* lua)
 {
@@ -29,21 +30,21 @@ int main()
         // ScriptManager mgr;
         // mgr.Initialize();   
 
-        // EntityManager entMgr;
-        // entMgr.Initialize();
+        EntityManager* entMgr = new EntityManager();
 
         Services services;
-        services.Add(new EntityManager());
+        services.Add(entMgr);
 
         auto mgr = new ScriptManager();
-        mgr->LinkMethod("log_info", ScriptManager::test);
-
         services.Add(mgr);
         services.Initialize();
 
+        BindLoggingMethods(mgr->getLuaState());
+        BindEntityMethods(mgr->getLuaState(), *entMgr);
+        
         mgr->LoadScripts();
 
-        auto service = (EntityManager*)services.GetService(ServiceType::Entity);
+       // auto service = (EntityManager*)services.GetService(ServiceType::Entity);
 
         //auto entMgr = services.GetService<EntityManager>(ServiceType::Entity);
         //services.Add(nullptr);
@@ -66,7 +67,6 @@ int main()
             {
                 break;
             }
-
 
             std::this_thread::sleep_for(time);
         }

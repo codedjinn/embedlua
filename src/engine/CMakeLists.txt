@@ -29,6 +29,8 @@ set(
     src/service_base.h
     src/services.h
     src/services.cpp
+    src/method_bindings.h
+    src/method_bindings.cpp
     main.cpp
 )
 
@@ -41,7 +43,6 @@ target_link_libraries(engine LINK_PUBLIC ${LUA})
 
 include_directories(lib/json/includes)
 
-
 include_directories(C:/sfml2/include)
 
 find_library(SFML2 sfml-graphics c:/SFML2/lib)
@@ -52,3 +53,12 @@ target_link_libraries(engine LINK_PUBLIC ${SFML22})
 
 find_library(SFML21 sfml-system c:/SFML2/lib)
 target_link_libraries(engine LINK_PUBLIC ${SFML21})
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/scripts/system.lua
+     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin/scripts)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/scripts/entity1.lua
+     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin/scripts)
+
+
+     

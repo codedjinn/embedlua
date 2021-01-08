@@ -5,5 +5,3 @@ end
 
 ent.update = function(time) 
 end
-
-log_info(1);
