@@ -1,12 +1,8 @@
 SFML2
 build
-bin/
 bin
-bin/*
 .vscode
 .vs
-
-bin/engine.exe
 
 .vscode/*
 !.vscode/settings.json
